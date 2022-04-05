@@ -1,44 +1,28 @@
 import React from 'react';
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Link} from "react-router-dom";
+import "./nav.css"
 
 function Navigation() {
     return (
-        <Navbar collapseOnSelect  bg="dark" variant="dark" style={{ height: "49px" }}>
-            <Container>
-                    <Nav activeKey="/" className="me-auto">
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/home">მთავარი</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/home">სიახლეები</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/home">პარტნიორები</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link as={Link} to="/home">კონტაქტი</Nav.Link>
-                        </Nav.Item>
-
-                    </Nav>
-                    <Nav>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
-                        <Navbar.Text>ცხელი ხაზი</Navbar.Text>
-                        <Navbar.Text>2 991 991</Navbar.Text>
-                    </Nav>
-            </Container>
+        <Navbar variant="dark">
+            <Nav activeKey="/">
+                <Nav.Link as={Link} to="/home">მთავარი</Nav.Link>
+                <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
+                <Nav.Link as={Link} to="/home">სიახლეები</Nav.Link>
+                <Nav.Link as={Link} to="/home">პარტნიორები</Nav.Link>
+                <Nav.Link as={Link} to="/home">კონტაქტი</Nav.Link>
+            </Nav>
+            <NavDropdown title="ქართული">
+                <NavDropdown.Item href="#action/3.1">ქართული</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
+            </NavDropdown>
+            <Navbar.Text>ცხელი ხაზი</Navbar.Text>
+            <Navbar.Text>2 991 991</Navbar.Text>
         </Navbar>
     );
 }
+
 /*<Nav
     activeKey="/"
 >

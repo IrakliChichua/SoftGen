@@ -1,0 +1,61 @@
+.navbar {
+    /*width: 1920px;*/
+    display: flex;
+    height: 49px;
+    background-color: black;
+
+}
+
+.navbar-nav {
+    justify-content: space-between;
+    width: 578px;
+    height: 20px;
+    margin-top: 16px;
+    margin-bottom: 13px;
+    margin-left: 278px;
+    text-align: center;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #D0D0D0;
+    font-size: 16px;
+    font-weight: 65;
+    height: 20px;
+    font-family: "Helvetica Neue LT GEO";
+    padding: 0
+}
+
+.navbar-expand .navbar-nav .nav-link {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.dropdown {
+    margin-left: 500px
+}
+.navbar-dark .navbar-text {
+    color: #D0D0D0;
+    height: 20px;
+    margin-left: 20px;
+}
+.navbar-text {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.dropdown-toggle {
+    margin-right: 50px;
+    padding: 0;
+    text-align: center;
+    width: 77px;
+    height: 20px;
+    display: flex;
+    color: #D0D0D0;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: #D0D0D0;
+}
+
+
+
