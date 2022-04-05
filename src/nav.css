@@ -31,7 +31,9 @@
 }
 
 .dropdown {
-    margin-left: 500px
+    margin-left: 500px;
+    display: flex;
+    justify-content: end;
 }
 .navbar-dark .navbar-text {
     color: #D0D0D0;
