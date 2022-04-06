@@ -1,0 +1,22 @@
+.top-main {
+    top: 49px;
+    height: 626px;
+    background-image: url("images/bgi.png" );
+    background-size: 100%, 626px;
+    background-repeat: no-repeat;
+}
+.top-main .top{
+    width: 100%;
+    height: 217px;
+    background: transparent linear-gradient(0deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
+}
+.top-main .bot-left{
+    width: 50%;
+    display:inline-block;
+    height: 409px;
+}
+.top-main .bot-right{
+    width: 50%;
+    display:inline-block;
+    height: 409px;
+}

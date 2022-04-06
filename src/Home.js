@@ -1,11 +1,18 @@
 import React from 'react';
+import "./home.css"
 
 function Home(props) {
     return (
-        <div>
-{/*
-            <img src="images/bgi.png" height="1252" width="3840" alt={'bgi'}/>
-*/}         sk
+        <div className={'top-main'}>
+            <div className={'top'}>
+
+            </div>
+            <div className={'bot-left'}>
+
+            </div>
+            <div className={'bot-right'}>
+
+            </div>
         </div>
     );
 }

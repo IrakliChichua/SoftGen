@@ -7,18 +7,18 @@ function Navigation() {
     return (
         <Navbar variant="dark">
             <Nav activeKey="/">
-                <Nav.Link as={Link} to="/home">მთავარი</Nav.Link>
-                <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
-                <Nav.Link as={Link} to="/home">სიახლეები</Nav.Link>
-                <Nav.Link as={Link} to="/home">პარტნიორები</Nav.Link>
-                <Nav.Link as={Link} to="/home">კონტაქტი</Nav.Link>
+                <Nav.Link as={Link} to="/home" style={{width: 70}}>მთავარი</Nav.Link>
+                <Nav.Link as={Link} to="/home" style={{width: 117}}>ჩვენს შესახებ</Nav.Link>
+                <Nav.Link as={Link} to="/home" style={{width: 87}}>სიახლეები</Nav.Link>
+                <Nav.Link as={Link} to="/home" style={{width: 109}}>პარტნიორები</Nav.Link>
+                <Nav.Link as={Link} to="/home" style={{width: 78}}>კონტაქტი</Nav.Link>
             </Nav>
             <NavDropdown title="ქართული">
                 <NavDropdown.Item href="#action/3.1">ქართული</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
             </NavDropdown>
-            <Navbar.Text>ცხელი ხაზი</Navbar.Text>
-            <Navbar.Text>2 991 991</Navbar.Text>
+            <Navbar.Text id="hot">ცხელი ხაზი</Navbar.Text>
+            <Navbar.Text id = "number"> 2 991 991</Navbar.Text>
         </Navbar>
     );
 }
