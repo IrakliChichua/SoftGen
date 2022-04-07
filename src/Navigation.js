@@ -28,7 +28,7 @@ function Navigation() {
             <div className={'lower-nav'}>
                 <Nav className={'lower-nav-nav'} activeKey="/">
                     <Nav.Link as={Link} to="/home">
-                        <img src="images/Logo.svg" alt="logo"/>
+                        {/*<img src="images/Logo.svg" alt="logo"/>*/}
                     </Nav.Link>
                     <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
                     <Nav.Link as={Link} to="/home">სიახლეები</Nav.Link>

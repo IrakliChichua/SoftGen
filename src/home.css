@@ -1,7 +1,7 @@
 .top-main {
     top: 49px;
     height: 626px;
-    background-image: url("images/bgi.png" );
+    /*background-image: url("images/bgi.png" );*/
     background-size: 100%, 626px;
     background-repeat: no-repeat;
 }

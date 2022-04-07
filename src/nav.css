@@ -7,7 +7,7 @@
 }
 
 .navbar {
-    background-image: url("images/upper-nav.svg" );
+    /*background-image: url("images/upper-nav.svg");*/
     background-position: 50%;
     background-repeat: no-repeat;
     color: #d0d0d0;
@@ -95,7 +95,6 @@
     z-index: 4;
 }
 .lower-nav-nav{
-    height: 70px;
     align-items: center;
     display: flex;
     flex-direction: row;
