@@ -4,7 +4,7 @@ import "./home.css"
 function Home(props) {
     return (
         <div className={'top-main'}>
-            <div className={'top'}>
+{/*            <div className={'top'}>
 
             </div>
             <div className={'bot-left'}>
@@ -12,7 +12,7 @@ function Home(props) {
             </div>
             <div className={'bot-right'}>
 
-            </div>
+            </div>*/}
         </div>
     );
 }

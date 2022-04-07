@@ -14,9 +14,13 @@
     width: 50%;
     display:inline-block;
     height: 409px;
+    background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
+
 }
 .top-main .bot-right{
     width: 50%;
     display:inline-block;
     height: 409px;
+    background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
+
 }
