@@ -46,7 +46,7 @@ function Navigation() {
                         </Nav.Link>
                         <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
                             <img src={profile} style={{ marginRight: 13 }} alt=""/>
-                            <div>ჩემი<br/>კაბინეტი</div>
+                            <div style={{fontSize:20}}>ჩემი<br/>კაბინეტი</div>
                         </Nav.Link>
                     </div>
 

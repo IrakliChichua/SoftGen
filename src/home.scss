@@ -1,0 +1,94 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("images/left2x.png");
+}
+
+.carousel-control-next-icon {
+  background-image: url("images/right2x.png");
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 46px;
+  height: 46px;
+}
+
+.carousel-caption {
+  p {
+    margin-bottom: 4.375rem;
+    font-size: 24px;
+  }
+
+  h3 {
+    text-shadow: 0 3px 30px #006A9F;
+    font-size: 48px;
+    font-family: PantonMtav3;
+
+  }
+}
+
+.carousel-indicators {
+  margin-bottom: 3.125rem;
+}
+
+.carousel-item {
+
+  img {
+    opacity: 1;
+    background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 180% 180% no-repeat padding-box;
+
+  }
+
+}
+
+.red-line {
+  height: 4px;
+  background-color: #EE303C;
+}
+
+.insurance-box {
+  @include flexCenter();
+}
+
+.cards-row {
+  @include flexCenter();
+  max-width: 1364px;
+  width: 100%;
+  justify-content: space-between;
+  position: relative;
+  top: -32px;
+
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px #006a9f1a;
+  color: #707070;
+  cursor: pointer;
+  height: 180px;
+  margin-left: 8px;
+  margin-right: 8px;
+  max-width: 260px;
+  width: 100%;
+  padding: 1rem;
+  background-color: white;
+  z-index: 2;
+
+  img {
+    margin-top: 30px;
+    position: relative;
+  }
+
+  div {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
