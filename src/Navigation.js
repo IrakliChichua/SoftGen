@@ -6,6 +6,7 @@ import logo from "./images/logo.svg"
 import shopping_cart from "./images/shopping_cart.svg"
 import profile from "./images/profile.svg"
 import phone from "./images/phone.svg"
+import profile_hover from "./images/profile_hover.svg"
 
 function Navigation() {
     return (
@@ -23,7 +24,7 @@ function Navigation() {
                         <NavDropdown.Item href="#action/3.1">ქართული</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
                     </NavDropdown>
-                    <div>
+                    <div className={'hot-number'}>
                         <Navbar.Text id="hot">ცხელი ხაზი</Navbar.Text>
                         <Navbar.Text id="number"> 2 991 991</Navbar.Text>
                     </div>
@@ -41,12 +42,15 @@ function Navigation() {
                     </div>
                     <div className={'right'}>
                         <Nav.Link className={'buy-online-box'} as={Link} to="/home">
-                            <img src={shopping_cart} style={{ marginRight: 8 }} alt=""/>
+                            <img src={shopping_cart} style={{marginRight: 8}} alt=""/>
                             <div>შეიძინე ონლაინ</div>
                         </Nav.Link>
                         <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
-                            <img src={profile} style={{ marginRight: 13 }} alt=""/>
-                            <div style={{fontSize:20}}>ჩემი<br/>კაბინეტი</div>
+                            <img src={profile}
+                                 onMouseOver={e => (e.currentTarget.src = profile_hover)}
+                                 onMouseOut={e => (e.currentTarget.src = profile)}
+                                 style={{marginRight: 13}} alt=""/>
+                            <div style={{fontSize: 20}}>ჩემი<br/>კაბინეტი</div>
                         </Nav.Link>
                     </div>
 
@@ -54,7 +58,7 @@ function Navigation() {
             </div>
             <div className={'phone'}>
                 <img width="30.13" height="30.13" src={phone} alt=""/>
-                <div style={{fontSize: 11}}>აგენტთან<br/>დაკავშირება</div>
+                <div>აგენტთან<br/>დაკავშირება</div>
             </div>
         </div>
 

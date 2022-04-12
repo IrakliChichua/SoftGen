@@ -54,7 +54,7 @@
   @include flexCenter();
 }
 
-.cards-row {
+.insurance-cards-row {
   @include flexCenter();
   max-width: 1364px;
   width: 100%;
@@ -64,7 +64,7 @@
 
 }
 
-.card-body {
+.insurance-card-body {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -73,22 +73,150 @@
   color: #707070;
   cursor: pointer;
   height: 180px;
-  margin-left: 8px;
-  margin-right: 8px;
   max-width: 260px;
   width: 100%;
-  padding: 1rem;
   background-color: white;
   z-index: 2;
 
   img {
-    margin-top: 30px;
-    position: relative;
+    margin-top: 35px;
   }
 
   div {
     margin-top: 15px;
     text-align: center;
-    font-size: 18px;
+    font-size: 20px;
   }
+}
+
+#home-background-2 {
+  background: url("images/Home_background_2.png");
+  background-repeat: no-repeat;
+  background-color: #F2F2F2;
+  padding-bottom: 59px;
+}
+
+#advantages-text {
+  @include flexCenter();
+  color: #707070;
+  font-family: PantonMtav3;
+  font-size: 36px;
+  margin-top: 74px;
+  margin-bottom: 47px;
+
+}
+
+.advantages-box {
+  @include flexCenter();
+}
+
+.advantages-row {
+  @include flexCenter();
+  max-width: 1300px;
+  width: 100%;
+  justify-content: space-between;
+}
+.advantages-card-body:hover {
+  background-color: white;
+}
+.advantages-card-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  height: 250px;
+  max-width: 200px;
+  width: 100%;
+  z-index: 2;
+
+  img {
+    margin-top: 36px;
+  }
+
+  div {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 16px;
+  }
+}
+
+#news-text {
+  @include flexCenter();
+  color: #707070;
+  font-family: PantonMtav3;
+  font-size: 36px;
+  margin-top: 44px;
+  margin-bottom: 36px;
+}
+
+.news-box {
+  @include flexCenter;
+}
+
+.news-row {
+  @include flexCenter();
+  max-width: 1364px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.news-card-body:hover {
+  border: 2px solid #006A9F;
+  border-radius: 13px 13px 12px 12px;
+}
+
+.news-card-body {
+  max-width: 444px;
+  cursor: pointer;
+
+  img {
+    width: 100%;
+  }
+
+  .box {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    border-radius: 0 0 12px 12px;
+    height: 159px;
+    max-width: 444px;
+    align-items: center;
+
+
+    div {
+      max-width: 393px;
+      width: 100%;
+      color: #707070;
+      font-family: PantonMtav3;
+    }
+
+    .text {
+      font-size: 20px;
+      margin-top: 32px;
+    }
+
+    .date {
+      font-size: 13px;
+      margin-top: 21px;
+      align-content: start;
+      color: #D0D0D0;
+    }
+  }
+}
+.all-news:hover{
+  color: mediumblue;
+}
+.all-news {
+  @include flexCenter();
+  color: #707070;
+  font-family: PantonMtav3;
+  font-size: 36px;
+  margin-top: 36px;
+
+  div {
+    font-size: 18px;
+    margin-right: 3.32px;
+    cursor: pointer;
+  }
+
 }

@@ -5,6 +5,9 @@
     flex-direction: column;
     width: 100%;
 }
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: mediumblue;
+}
 
 .navbar {
     background-image: url("images/upper-nav.svg");
@@ -58,6 +61,9 @@
     color: #D0D0D0;
     height: 20px;
     padding: 0;
+}
+.hot-number{
+    cursor: pointer;
 }
 #hot{
     width: 94px;
@@ -124,6 +130,10 @@
 .lower-nav-nav .right {
     align-items: center;
 }
+.phone:hover{
+    transition: .3s ease-out;
+    width: 138px;
+}
 .phone {
     background-color: red;
     border-radius: 12px 0 0 12px;
@@ -139,7 +149,10 @@
     top: 193px;
     transition: .3s ease-out;
     width: 128px;
-    z-index: 2;
+    z-index: 3;
+}
+.phone > div {
+    font: normal normal 700 11px/17px Helvetica Neue LT GEO;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
