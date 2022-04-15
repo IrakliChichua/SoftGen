@@ -271,9 +271,7 @@ button:focus:not(:focus-visible) {
 .all-news:hover {
   color: mediumblue;
   img{
-    svg{
-      color: red;
-    }
+    filter: invert(1);
   }
 }
 .all-news-box{
