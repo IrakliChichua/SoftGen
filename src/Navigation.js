@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Container, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import "./nav.css"
@@ -9,6 +9,10 @@ import phone from "./images/phone.svg"
 import profile_hover from "./images/profile_hover.svg"
 
 function Navigation() {
+
+
+    const [showDropdown, setShowDropdown] = useState(false);
+
     return (
         <div className={'nav'}>
             <Navbar variant="dark">
@@ -20,7 +24,11 @@ function Navigation() {
                     <Nav.Link as={Link} to="/home" style={{padding: 0}}>კონტაქტი</Nav.Link>
                 </Nav>
                 <div className={'upper-right-nav'}>
-                    <NavDropdown title="ქართული">
+                    <NavDropdown title="ქართული"
+                                 id="collasible-nav-dropdown"
+                                 show={showDropdown}
+                                 onMouseLeave={() => setShowDropdown(false)}
+                                 onMouseOver={() => setShowDropdown(true)}>
                         <NavDropdown.Item href="#action/3.1">ქართული</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
                     </NavDropdown>
@@ -34,7 +42,7 @@ function Navigation() {
                 <Nav className={'lower-nav-nav'} activeKey="/">
                     <div className={'left'}>
                         <Nav.Link as={Link} to="/home">
-                            <img src={logo} alt=""/>
+                            <img id={'unison-logo'} src={logo} alt=""/>
                         </Nav.Link>
                         <Nav.Link as={Link} to="/home">ფიზიკური<br/>პირებისთვის</Nav.Link>
                         <Nav.Link as={Link} to="/home">იურიდიული<br/>პირებისთვის</Nav.Link>
@@ -49,8 +57,8 @@ function Navigation() {
                             <img src={profile}
                                  onMouseOver={e => (e.currentTarget.src = profile_hover)}
                                  onMouseOut={e => (e.currentTarget.src = profile)}
-                                 style={{marginRight: 13}} alt=""/>
-                            <div style={{fontSize: 20}}>ჩემი<br/>კაბინეტი</div>
+                                  alt=""/>
+                            <div>ჩემი<br/>კაბინეტი</div>
                         </Nav.Link>
                     </div>
 

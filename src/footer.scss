@@ -1,0 +1,65 @@
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+*, ::after, ::before {
+  box-sizing: initial;
+}
+
+.footer {
+  @include flexCenter();
+}
+
+#unison-2021 {
+  font: normal normal normal 14px/17px Helvetica Neue LT GEO;
+  margin-bottom: 0;
+  margin-top: 56.5px;
+  cursor: initial;
+}
+
+#unison-2021:hover {
+  text-decoration: none;
+  color: #707070;
+}
+
+.footer-box {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  max-width: 1364px;
+  width: 100%;
+  padding-top: 45px;
+  padding-bottom: 55px;
+  color: #707070;
+
+  ul {
+    list-style: none;
+    width: 25%;
+    padding: 0;
+
+    p {
+      cursor: pointer;
+      margin-bottom: 20px;
+      font: normal normal bold 16px/20px Helvetica Neue LT GEO;
+    }
+
+    li:hover {
+      text-decoration: underline;
+      color: #006A9F;
+    }
+
+    li {
+      cursor: pointer;
+      margin-bottom: 20px;
+      font: normal normal normal 16px/20px Helvetica Neue LT GEO;
+
+      img {
+        margin-right: 12px;
+      }
+    }
+  }
+
+}
+

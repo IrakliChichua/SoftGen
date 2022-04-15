@@ -35,6 +35,20 @@
   margin-bottom: 3.125rem;
 }
 
+.carousel-indicators [data-bs-target] {
+  border-radius: 50%;
+  border: 2px solid white;
+  width: 12px;
+  height: 12px;
+  padding: 4px;
+  background-color: transparent;
+  opacity: 1;
+}
+
+button:focus:not(:focus-visible) {
+  background-color: white;
+}
+
 .carousel-item {
 
   img {
@@ -106,6 +120,10 @@
 
 }
 
+.buy-online-box:hover {
+  padding: 0.15rem;
+}
+
 .advantages-box {
   @include flexCenter();
 }
@@ -116,9 +134,16 @@
   width: 100%;
   justify-content: space-between;
 }
-.advantages-card-body:hover {
-  background-color: white;
+
+.advantages-column {
+  @include flexCenter();
+  max-width: 376px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
+
+
 .advantages-card-body {
   display: flex;
   align-items: center;
@@ -140,6 +165,10 @@
   }
 }
 
+.advantages-card-body:hover {
+  background-color: white;
+}
+
 #news-text {
   @include flexCenter();
   color: #707070;
@@ -147,6 +176,31 @@
   font-size: 36px;
   margin-top: 44px;
   margin-bottom: 36px;
+}
+
+.phone-box {
+  @include flexCenter();
+  margin-top: -22px;
+}
+
+.version-mobile-phone {
+  @include flexCenter();
+  cursor: pointer;
+  width: 336px;
+  height: 71px;
+  background-color: #EE303C;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px #EE303C4D;
+  color: white;
+
+  img {
+    margin-right: 10px;
+  }
+
+  div {
+    font-size: 14px;
+    font-family: Helvetica Neue LT GEO MT, SS Roman;
+  }
 }
 
 .news-box {
@@ -158,16 +212,26 @@
   max-width: 1364px;
   width: 100%;
   justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .news-card-body:hover {
-  border: 2px solid #006A9F;
-  border-radius: 13px 13px 12px 12px;
+  border-color: #006A9F;
+
+}
+
+.insurance-card-body:hover {
+  background-color: #006a9f;
+  color: #fff;
+  transition: .2s ease-out;
 }
 
 .news-card-body {
   max-width: 444px;
   cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 13px 13px 12px 12px;
 
   img {
     width: 100%;
@@ -203,8 +267,18 @@
     }
   }
 }
-.all-news:hover{
+
+.all-news:hover {
   color: mediumblue;
+  img{
+    svg{
+      color: red;
+    }
+  }
+}
+.all-news-box{
+  @include flexCenter();
+
 }
 .all-news {
   @include flexCenter();
@@ -212,11 +286,145 @@
   font-family: PantonMtav3;
   font-size: 36px;
   margin-top: 36px;
+  cursor: pointer;
 
   div {
     font-size: 18px;
     margin-right: 3.32px;
-    cursor: pointer;
+  }
+
+
+}
+
+
+@media only screen and (max-width: 1400px) {
+  .news-card-body {
+    max-width: 400px;
+
+    .box {
+      height: 150px;
+
+      div {
+        max-width: 318px;
+        width: 100%;
+      }
+
+      .text {
+        font-size: 17px;
+      }
+
+      .date {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1350px) {
+  .insurance-cards-row {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .carousel-caption {
+    p {
+      font-size: 16px;
+    }
+
+    h3 {
+      font-size: 32px;
+    }
+  }
+
+  .insurance-card-body {
+    max-width: 220px;
+    height: 160px;
+    width: 100%;
+
+    div {
+      font-size: 16px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1250px) {
+  .news-card-body {
+    max-width: 360px;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .insurance-card-body {
+    max-width: 190px;
+    height: 150px;
+    width: 100%;
+
+    img {
+      margin-top: 25px;
+    }
+
+    div {
+      font-size: 14px;
+    }
+
+  }
+  .news-card-body .box div {
+    max-width: 290px;
+  }
+
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .insurance-cards-row {
+    max-width: 346px;
+    flex-wrap: wrap;
+  }
+
+  .insurance-card-body {
+    height: 113px;
+    max-width: 163px;
+    margin: 5px;
+
+    div {
+      font-size: 12px;
+      font-weight: bold;
+      margin-top: 7px;
+    }
+
+    img {
+      margin-top: 22px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  #advantages-text {
+    font-size: 36px;
+    margin-top: 70px;
+    margin-bottom: 47px;
+
+  }
+
+  .advantages-card-body {
+    height: 150px;
+    max-width: 153px;
+
+    img {
+      margin-top: 0;
+    }
+
+    .number {
+      font-size: 26px;
+      font-weight: bold;
+      color: #006A9F;
+      margin-bottom: 11px;
+    }
+
+    div {
+      margin-top: 2px;
+      text-align: center;
+      font-size: 13px;
+    }
   }
 
 }

@@ -1,10 +1,11 @@
-.nav{
+.nav {
     align-items: center;
     background-color: #242424;
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 .navbar-dark .navbar-nav .nav-link:hover {
     color: mediumblue;
 }
@@ -20,19 +21,22 @@
     justify-content: space-between;
     max-width: 1424px;
     width: 100%;
-    padding: 0 30px 0 30px;
-
+    padding: 0;
 }
+
 .upper-left-nav {
     align-items: center;
     display: flex;
+    padding-left: 30px;
 }
+
 .navbar-nav {
     justify-content: space-between;
     height: 20px;
     text-align: center;
     display: flex;
 }
+
 .navbar-dark .navbar-nav .nav-link {
     color: #D0D0D0;
     font-size: 16px;
@@ -43,16 +47,23 @@
     padding-left: 0;
 
 }
+
 .upper-right-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding-right: 30px;
 }
+
 .dropdown {
     margin-right: 58px;
 }
+
 .dropdown-toggle {
     color: #D0D0D0;
+}
+.dropdown-item{
+    width: auto;
 }
 /*.nav-link{
     padding: 0;
@@ -62,19 +73,24 @@
     height: 20px;
     padding: 0;
 }
-.hot-number{
+
+.hot-number {
     cursor: pointer;
 }
-#hot{
+
+#hot {
     width: 94px;
     padding-right: 11px;
 }
-#number{
+
+#number {
     width: 71px;
 }
+
 .nav-link:focus, .nav-link:hover {
     color: #D0D0D0;
 }
+
 * {
     font-family: "Helvetica Neue LT GEO";
     font-size: inherit;
@@ -84,7 +100,8 @@
     padding: 0;
     scroll-behavior: smooth;
 }
-.lower-nav{
+
+.lower-nav {
     max-width: 1424px;
     padding-top: 33px;
     position: absolute;
@@ -92,20 +109,31 @@
     width: 100%;
     z-index: 2;
 }
-.lower-nav-nav{
+
+.lower-nav-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: transparent;
-    padding: 0 30px 0 30px;
 }
-.nav-link{
+
+.lower-nav-nav > .left {
+    padding-left: 30px;
+}
+
+.lower-nav-nav > .right {
+    padding-right: 30px;
+}
+
+.nav-link {
     padding: 0;
 }
+
 .lower-nav-nav > div {
     display: flex;
 }
-.lower-nav-nav >div .nav-link{
+
+.lower-nav-nav > div .nav-link {
     display: flex;
     color: #FFFFFF;
     font-size: 18px;
@@ -113,10 +141,12 @@
     margin-right: 48px;
     align-items: center;
 }
+
 .background-gradient {
     background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
 }
-.buy-online-box{
+
+.buy-online-box {
     display: flex;
     justify-content: center;
     width: 230px;
@@ -124,17 +154,20 @@
     background: #EE303C 0 0 no-repeat padding-box;
     border-radius: 12px;
     opacity: 1;
-    
+
 }
 
 .lower-nav-nav .right {
     align-items: center;
 }
-.phone:hover{
+
+.phone:hover {
     transition: .3s ease-out;
     width: 138px;
 }
+
 .phone {
+    box-sizing: border-box;
     background-color: red;
     border-radius: 12px 0 0 12px;
     color: #fff;
@@ -151,25 +184,67 @@
     width: 128px;
     z-index: 3;
 }
+
+.my-office > div {
+    font-size: 20px;
+}
+
+.my-office > img{
+    margin-right: 13px;
+}
+
+.my-office > img:hover {
+    margin: -4px;
+    margin-right: 9px;
+}
+
 .phone > div {
     font: normal normal 700 11px/17px Helvetica Neue LT GEO;
 }
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+
+
+@media only screen and (max-width: 1350px) {
+    #unison-logo {
+        width: 182px;
+        height: 39px;
+    }
+
+    .lower-nav-nav > div .nav-link {
+        margin-right: 30px;
+        font-size: 16px;
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        font-size: 14px;
+        padding-right: 20px;
+    }
+
+    .hot-number, .dropdown {
+        font-size: 14px;
+    }
+
+    .my-office > div {
+        font-size: 18px;
+    }
+
 }
 
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 1150px) {
+
+    .lower-nav-nav > div .nav-link {
+        margin-right: 18px;
+        font-size: 15px;
+    }
+    .buy-online-box{
+        width: 190px;
+    }
+
+    .my-office > div {
+        font-size: 16px;
+    }
 }
 
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (max-width: 1000px){
+    .nav{display: none}
 }
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (max-width: 1550px) {
-
-}
-
-
 
