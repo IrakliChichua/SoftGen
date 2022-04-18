@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./footer.scss"
 import footer_unisonLogo from "./images/footer_unisonLogo.svg"
 import app_store_badge from "./images/app_store_badge.svg"
@@ -10,17 +10,53 @@ import youtube_icon from "./images/youtube_icon.png"
 
 
 function Footer(props) {
+
+    function getWindowDimensions() {
+        const {innerWidth: width, innerHeight: height} = window;
+        return {
+            width,
+            height
+        };
+    }
+
+    function useWindowDimensions() {
+        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+        useEffect(() => {
+            function handleResize() {
+                setWindowDimensions(getWindowDimensions());
+            }
+
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }, []);
+
+        return windowDimensions;
+    }
+
+    const {height, width} = useWindowDimensions();
+
+
     return (
         <div className={'footer'}>
             <div className={'footer-box'}>
-                <ul style={{paddingLeft:30}}>
-                    <li style={{marginBottom: 38.3}}>
-                        <img src={footer_unisonLogo}  width={'202'} height={"43.39"} alt=""/>
-                    </li>
+                <ul style={{paddingLeft: 30}}>
+                    {width > 1000 ?
+                        <li className={'li-full-line'} style={{marginBottom: 38.3}}>
+                            <img src={footer_unisonLogo} width={'202'} height={"43.39"} alt=""/> :
+                        </li>
+                        :
+                        <li className={'li-full-line'} style={{marginBottom: 26}}>
+                            <img src={footer_unisonLogo} width={'151'} height={"32"} alt=""/>
+                        </li>
+                    }
+
+
                     <li> ჩვენ შესახებ</li>
                     <li> კარიერა</li>
-                    <li> პარტნიორები</li>
-                    <li style={{marginTop: 40, marginBottom: 0}}>
+                    <li className={'li-full-line'}> პარტნიორები</li>
+
+                    <li className={'badges'}>
                         <img style={{marginRight: 3.73}} src={app_store_badge} alt=""/>
                         <img style={{marginRight: 0}} src={google_play_badge} alt=""/>
                     </li>
@@ -31,7 +67,7 @@ function Footer(props) {
                     <li>საინფორმაციო ფურცელი</li>
                     <li>სამედიცინო პროვაიდერები</li>
                     <li>ხელშეკრულებები</li>
-                    <li id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია, 2021</li>
+                    <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია, 2021</li>
                 </ul>
                 <ul>
                     <p>დახმარება</p>

@@ -38,15 +38,15 @@
 .carousel-indicators [data-bs-target] {
   border-radius: 50%;
   border: 2px solid white;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   padding: 4px;
-  background-color: transparent;
+  background: none;
   opacity: 1;
 }
 
-button:focus:not(:focus-visible) {
-  background-color: white;
+.carousel-indicators .active {
+  background: white;
 }
 
 .carousel-item {
@@ -120,9 +120,6 @@ button:focus:not(:focus-visible) {
 
 }
 
-.buy-online-box:hover {
-  padding: 0.15rem;
-}
 
 .advantages-box {
   @include flexCenter();
@@ -166,7 +163,8 @@ button:focus:not(:focus-visible) {
 }
 
 .advantages-card-body:hover {
-  background-color: white;
+  background: rgba(255, 255, 255, .5);
+  border-radius: 12px;
 }
 
 #news-text {
@@ -270,14 +268,17 @@ button:focus:not(:focus-visible) {
 
 .all-news:hover {
   color: mediumblue;
-  img{
+
+  img {
     filter: invert(1);
   }
 }
-.all-news-box{
+
+.all-news-box {
   @include flexCenter();
 
 }
+
 .all-news {
   @include flexCenter();
   color: #707070;
@@ -402,10 +403,13 @@ button:focus:not(:focus-visible) {
     margin-bottom: 47px;
 
   }
-
+.advantages-column{
+  padding: 0 28px 0 28px;
+}
   .advantages-card-body {
     height: 150px;
     max-width: 153px;
+    margin-bottom: 23px;
 
     img {
       margin-top: 0;
@@ -415,14 +419,61 @@ button:focus:not(:focus-visible) {
       font-size: 26px;
       font-weight: bold;
       color: #006A9F;
-      margin-bottom: 11px;
+      margin-bottom: 10px;
     }
 
     div {
-      margin-top: 2px;
+      margin-top: 0;
       text-align: center;
       font-size: 13px;
     }
   }
 
+  #news-text {
+    margin: 50px 0 17px 0;
+
+  }
+
+
+  .news-card-body {
+    max-width: none;
+    width: 277px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 13px 13px 12px 12px;
+
+    img {
+      width: 100%;
+    }
+
+    .box {
+      display: flex;
+      flex-direction: column;
+      background: #FFFFFF;
+      border-radius: 0 0 12px 12px;
+      height: 159px;
+      max-width: 444px;
+      align-items: center;
+
+
+      div {
+        max-width: 393px;
+        width: 100%;
+        color: #707070;
+        font-family: PantonMtav3;
+      }
+
+      .text {
+        font-size: 20px;
+        margin-top: 32px;
+      }
+
+      .date {
+        font-size: 13px;
+        margin-top: 21px;
+        align-content: start;
+        color: #D0D0D0;
+      }
+    }
+  }
 }

@@ -15,6 +15,8 @@ import touch_app_black_24dp from "./images/touch_app_black_24dp.svg"
 import timer_black_24dp from "./images/timer_black_24dp.svg"
 import mobile_version_user from "./images/mobile_version_user.svg"
 import business_black from "./images/business_black.svg"
+import date_range_black from "./images/date_range_black.svg"
+import payments_black from "./images/payments_black.svg"
 import cart from "./images/cart.svg"
 import news_pic_1 from "./images/news_pic_1.png"
 import news_pic_2 from "./images/news_pic_2.png"
@@ -171,11 +173,20 @@ function Home(props) {
                                 <div className={'number'}> 5</div>
                                 <div> ფილიალი<br/>საქართველოში</div>
                             </div>
+                            <div className={'advantages-card-body'}>
+                                <img src={payments_black} alt=""/>
+                                <div className={'number'}> 2’800’843</div>
+                                <div> ანაზღაურებული<br/>თანხა</div>
+                            </div>
+                            <div className={'advantages-card-body'}>
+                                <img src={date_range_black} alt=""/>
+                                <div className={'number'}> 12</div>
+                                <div> წარმატებული<br/>წელი</div>
+                            </div>
 
                         </div>
                     }
                 </div>
-
                 <div id={'news-text'}>სიახლეები</div>
                 <div className={'news-box'}>
                     <div className={'news-row'}>
