@@ -29,6 +29,16 @@
   margin-bottom: 0;
 }
 
+.fb-icon {
+  margin-bottom: 10px;
+}
+.ig-icon{
+  margin-bottom: 13px;
+}
+.linkedin-icon {
+  margin-bottom: 18px;
+}
+
 .footer-box {
   display: flex;
   flex-direction: row;
@@ -68,9 +78,6 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .badges {
-    display: none;
-  }
 
   .footer-box {
     display: flex;
@@ -78,14 +85,34 @@
     margin: auto;
     max-width: none;
     width: 100%;
-    padding-top: 45px;
-    padding-bottom: 55px;
+    padding-top: 37px;
+    padding-bottom: 30px;
     color: #707070;
 
     .li-full-line {
       width: 100%;
     }
 
+    .badges {
+      width: 100%;
+      margin-top: -2px;
+    }
+
+    .fb-icon {
+        margin-bottom: 19px;
+    }
+    .ig-icon{
+      margin-bottom: 18px;
+    }
+    .youtube-icon{
+      margin-bottom: 22px;
+    }
+    .linkedin-icon{
+      margin-bottom: 20px;
+    }
+    #unison-2021{
+      margin: 0;
+    }
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -117,5 +144,6 @@
       }
     }
   }
+
 }
 

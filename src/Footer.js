@@ -43,7 +43,7 @@ function Footer(props) {
                 <ul style={{paddingLeft: 30}}>
                     {width > 1000 ?
                         <li className={'li-full-line'} style={{marginBottom: 38.3}}>
-                            <img src={footer_unisonLogo} width={'202'} height={"43.39"} alt=""/> :
+                            <img src={footer_unisonLogo} width={'202'} height={"43.39"} alt=""/>
                         </li>
                         :
                         <li className={'li-full-line'} style={{marginBottom: 26}}>
@@ -56,44 +56,70 @@ function Footer(props) {
                     <li> კარიერა</li>
                     <li className={'li-full-line'}> პარტნიორები</li>
 
-                    <li className={'badges'}>
+                    {width > 1000 ? <li className={'badges'}>
                         <img style={{marginRight: 3.73}} src={app_store_badge} alt=""/>
                         <img style={{marginRight: 0}} src={google_play_badge} alt=""/>
-                    </li>
+                    </li> : <></>}
+
+
                 </ul>
                 <ul>
                     <p>ინფორმაცია</p>
                     <li>სიახლეები</li>
-                    <li>საინფორმაციო ფურცელი</li>
-                    <li>სამედიცინო პროვაიდერები</li>
-                    <li>ხელშეკრულებები</li>
-                    <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია, 2021</li>
+                    {width > 1000 ? <li>საინფორმაციო ფურცელი</li> : <li>ხელშეკრულებები</li>}
+                    {width > 1000 ? <li>სამედიცინო პროვაიდერები</li> : <li>საინფორმაციო ფურცელი</li>}
+                    {width > 1000 ? <li>ხელშეკრულებები</li> : <li>სამედიცინო პროვაიდერები</li>}
+                    {width > 1000 ? <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია,
+                        2021</li> : <></>}
+
                 </ul>
                 <ul>
                     <p>დახმარება</p>
                     <li>კონტაქტი</li>
-                    <li>მომხმარებლის ხმა</li>
-                    <li>ხშირად დასმული კითხვები</li>
-                    <li>მონაცემთა დაცვა</li>
+                    {width > 1000 ? <li>მომხმარებლის ხმა</li> : <li>მონაცემთა დაცვა</li>}
+                    {width > 1000 ? <li>ხშირად დასმული კითხვები</li> : <li>მომხმარებლის <br/>ხმა</li>}
+                    {width > 1000 ? <li>მონაცემთა დაცვა</li> : <li>ხშირად დასმული კითხვები</li>}
                 </ul>
                 <ul>
-                    <p style={{marginBottom: 16}}>სოციალური ქსელები</p>
-                    <li style={{marginBottom: 10}}>
+                    {width > 1000 ? <p style={{marginBottom: 16}}>სოციალური ქსელები</p> :
+                        <li className={'badges'}>
+                            <img style={{marginRight: 18.34}} src={app_store_badge} width={120} height={40} alt=""/>
+                            <img style={{marginRight: 0}} src={google_play_badge} width={152} height={60} alt=""/>
+                        </li>
+                    }
+                    <li className={'fb-icon'}>
                         <img src={facebook_icon} alt=""/>
                         Facebook
                     </li>
-                    <li style={{marginBottom: 13}}>
+                    <li className={'ig-icon'}>
                         <img src={instagram_icon} alt=""/>
                         Instagram
                     </li>
-                    <li style={{marginBottom: 18}}>
-                        <img src={linkedin_icon} alt=""/>
-                        Linkedin
-                    </li>
-                    <li>
-                        <img src={youtube_icon} alt=""/>
-                        Youtube
-                    </li>
+                    {width > 1000 ?
+                        <li className={'linkedin-icon'}>
+                            <img src={linkedin_icon} alt=""/>
+                            Linkedin
+                        </li>
+                        :
+                        <li className={'youtube-icon'}>
+                            <img src={youtube_icon} alt=""/>
+                            Youtube
+                        </li>
+                    }
+                    {width > 1000 ?
+                        <li className={'youtube-icon'}>
+                            <img src={youtube_icon} alt=""/>
+                            Youtube
+                        </li>
+                        :
+                        <li className={'linkedin-icon'}>
+                            <img src={linkedin_icon} alt=""/>
+                            Linkedin
+                        </li>
+                    }
+                    {width < 1000 ? <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია,
+                        2021</li> : <></>}
+
                 </ul>
             </div>
         </div>
