@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "./home.scss"
 import {Carousel} from "react-bootstrap";
+import WindowDimensions from "./WindowDimensions";
 import bgi from "./images/bgi.png"
 import directions_car_filled from "./images/directions_car_filled.svg"
 import flight_takeoff from "./images/flight_takeoff.svg"
@@ -21,35 +22,11 @@ import cart from "./images/cart.svg"
 import news_pic_1 from "./images/news_pic_1.png"
 import news_pic_2 from "./images/news_pic_2.png"
 import news_pic_3 from "./images/news_pic_3.png"
-import news_arrow_right from "./images/news_arrow_right.svg"
 import phone from "./images/phone.svg";
 
 function Home(props) {
 
-    function getWindowDimensions() {
-        const {innerWidth: width, innerHeight: height} = window;
-        return {
-            width,
-            height
-        };
-    }
-
-    function useWindowDimensions() {
-        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-        useEffect(() => {
-            function handleResize() {
-                setWindowDimensions(getWindowDimensions());
-            }
-
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }, []);
-
-        return windowDimensions;
-    }
-
-    const {height, width} = useWindowDimensions();
+    const [width, height] = WindowDimensions()
 
     return (
         <div>
@@ -216,7 +193,7 @@ function Home(props) {
                 <div className={'all-news-box'}>
                     <div className={'all-news'}>
                         <div> ყველა სიახლე</div>
-                        <img src={news_arrow_right} width={12} height={12} alt=""/>
+                        <div className={'arrow-right'}/>
                     </div>
                 </div>
 

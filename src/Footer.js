@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import WindowDimensions from "./WindowDimensions";
 import "./footer.scss"
 import footer_unisonLogo from "./images/footer_unisonLogo.svg"
 import app_store_badge from "./images/app_store_badge.svg"
@@ -11,31 +12,7 @@ import youtube_icon from "./images/youtube_icon.png"
 
 function Footer(props) {
 
-    function getWindowDimensions() {
-        const {innerWidth: width, innerHeight: height} = window;
-        return {
-            width,
-            height
-        };
-    }
-
-    function useWindowDimensions() {
-        const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
-
-        useEffect(() => {
-            function handleResize() {
-                setWindowDimensions(getWindowDimensions());
-            }
-
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }, []);
-
-        return windowDimensions;
-    }
-
-    const {height, width} = useWindowDimensions();
-
+    const [width,height] = WindowDimensions()
 
     return (
         <div className={'footer'}>

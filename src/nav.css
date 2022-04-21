@@ -162,13 +162,14 @@
     border-radius: 12px;
     opacity: 1;
     margin-right: 48px;
-
+    transition: 300ms ease-in-out;
 }
 
 .buy-online-box:hover {
     padding: 5px;
-    margin: -5px;
-    margin-right: 43px;
+    margin: -5px 43px -5px -5px;
+    transition: 300ms ease-out;
+
 }
 
 .lower-nav-nav .right {
@@ -203,19 +204,38 @@
     font-size: 20px;
 }
 
-.my-office > img {
-    margin-right: 13px;
-}
-
-.my-office > img:hover {
-    margin: -4px;
-    margin-right: 9px;
-}
-
 .phone > div {
     font: normal normal 700 11px/17px Helvetica Neue LT GEO;
 }
 
+
+#Component_8_11 {
+    margin-right: 13px;
+    transition: .3s ease-out;
+}
+
+#Component_8_11:hover {
+    width: 70px;
+    height: 70px;
+    transition: 300ms ease-out;
+    margin: -4px 9px -4px -4px;
+}
+
+#Component_8_11:hover > #Ellipse_1 {
+
+    fill: red;
+    transition: 300ms ease-out;
+}
+
+#Component_8_11:hover > #_24px-2 > #Path_36 {
+    fill: white;
+
+}
+
+#_24px-2 {
+    width: 28px;
+    height: 28px;
+}
 
 @media only screen and (max-width: 1350px) {
     #unison-logo {
@@ -327,46 +347,93 @@
         height: 21px;
     }
 
-    .app-menu {
-        color: white;
-        height: 100vh;
+
+    .offcanvas.offcanvas-start {
         width: 100%;
-        background-color: white;
-        z-index: 200;
-
-        transform: translateX(-100%);
-        transition: 0.3s;
-
-        position: fixed;
-        left: 0;
-        top: 0;
-        display: flex;
-        justify-content: center;
     }
 
-    .menu-open {
-        transform: translateX(0%);
-
+    .offcanvas-header {
+        display: flex;
+        padding: 43px 38px 0 36px;
     }
 
-    .mobile-menu-container {
-        display: flex;
-        flex-direction: column;
-        max-width: 318px;
-        width: 100%;
+    .logo-exit {
+        padding: 0;
+    }
+
+    .offcanvas-body {
+        padding: 51px 38px 61px 36px;
     }
 
     .my-office {
         display: flex;
         align-items: center;
-        margin-top: 51px;
     }
 
-    .my-office > img:hover {
-        margin: 0;
+    .my-office > img {
         margin-right: 20px;
     }
 
+    .my-office > img:hover {
+        margin: 0 20px 0 0;
+    }
+
+    .my-office > svg > #Ellipse_1 {
+        fill: #006A9F;
+    }
+
+    .my-office > svg > g > #Path_36 {
+        fill: white;
+    }
+    #Component_8_12{
+        margin-right: 20px;
+    }
+
+    .nav-link:focus, .nav-link:hover{
+        color: #707070;
+    }
+    .my-office > div {
+        color: #707070;
+    }
+
+    .mobile-menu-insurance{
+        margin-top: 56px;
+    }
+    .mobile-menu-insurance-card-columns{
+        display: flex;
+        flex-direction: column;
+    }
+    .mobile-card-body{
+        display: flex;
+        align-items: center;
+        margin-bottom: 35px;
+        color: #707070;
+
+    }
+    .mobile-card-body > img {
+        margin-right: 18px;
+    }
+
+    #_24px{
+        width: 24px;
+        height: 24px;
+    }
+    #_24px > #Path_42{
+        fill: #EE303C;
+
+    }
+    .mobile-arrow-right{
+        border: solid red;
+        border-width: 0 1px 1px 0;
+        display: inline-block;
+        padding: 1px;
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        width: 5px;
+        height: 5px;
+        margin-left: auto;
+    }
 
 }
+
 
