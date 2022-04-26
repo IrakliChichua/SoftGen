@@ -12,7 +12,8 @@
 
 .navbar {
     background-image: url("images/upper-nav.svg");
-    background-position: 50%;
+    background-position-x: 60%;
+    background-position-y: 71%;
     background-repeat: no-repeat;
     color: #d0d0d0;
     display: flex;
@@ -65,6 +66,8 @@
 
 .dropdown-item {
     width: auto;
+    color: #D0D0D0;
+
 }
 
 /*.nav-link{
@@ -87,6 +90,9 @@
 
 #number {
     width: 71px;
+}
+.dropdown-menu[data-bs-popper] {
+    background-color: #242424;
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -352,17 +358,13 @@
         width: 100%;
     }
 
-    .offcanvas-header {
-        display: flex;
-        padding: 43px 38px 0 36px;
-    }
 
     .logo-exit {
         padding: 0;
     }
 
     .offcanvas-body {
-        padding: 51px 38px 61px 36px;
+        padding: 43px 38px 61px 36px;
     }
 
     .my-office {
@@ -385,44 +387,51 @@
     .my-office > svg > g > #Path_36 {
         fill: white;
     }
-    #Component_8_12{
+
+    #Component_8_12 {
         margin-right: 20px;
     }
 
-    .nav-link:focus, .nav-link:hover{
+    .nav-link:focus, .nav-link:hover {
         color: #707070;
     }
+
     .my-office > div {
         color: #707070;
     }
 
-    .mobile-menu-insurance{
+    .mobile-menu-insurance {
         margin-top: 56px;
     }
-    .mobile-menu-insurance-card-columns{
+
+    .mobile-menu-insurance-card-columns {
         display: flex;
         flex-direction: column;
     }
-    .mobile-card-body{
+
+    .mobile-card-body {
         display: flex;
         align-items: center;
         margin-bottom: 35px;
         color: #707070;
 
     }
+
     .mobile-card-body > img {
         margin-right: 18px;
     }
 
-    #_24px{
+    #_24px {
         width: 24px;
         height: 24px;
     }
-    #_24px > #Path_42{
+
+    #_24px > #Path_42 {
         fill: #EE303C;
 
     }
-    .mobile-arrow-right{
+
+    .mobile-arrow-right {
         border: solid red;
         border-width: 0 1px 1px 0;
         display: inline-block;
@@ -434,6 +443,104 @@
         margin-left: auto;
     }
 
+    .buy-online-box {
+        justify-content: center;
+        align-items: center;
+        width: 236px;
+        height: 48px;
+        pointer-events: none;
+
+    }
+
+    .mobile-info {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 53px;
+    }
+
+    .mobile-info > .nav-link {
+        width: 50%;
+        color: #707070;
+        font-size: 16px;
+        margin-bottom: 37px;
+    }
+
+    .mobile-menu-footer {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-languages {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+
+    .mobile-menu-languages > .nav-item {
+        display: flex;
+        width: auto;
+        font-size: 16px;
+        color: #707070;
+        margin-bottom: 19px;
+        margin-left: -36px;
+    }
+    .mobile-menu-languages > .nav-item > div {
+        position: relative;
+        align-self: center;
+        margin-right: 15px;
+    }
+
+    .selected-sign{
+        width: 21px;
+        height: 14px;
+        border-radius: 0 7px 7px 0;
+    }
+    .selected-language{
+        background-color: #EE303C;
+    }
+
+    .nav-item.nav-item-active {
+        color: #EE303C;
+    }
+
+    .mobile-hot-container {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        margin-bottom: -9px;
+    }
+
+    .mobile-hot-logo-number {
+        display: flex;
+    }
+
+    .hot-number {
+        cursor: default;
+        color: #707070;
+        font-size: 14px;
+        margin-left: auto;
+    }
+
+    .mobile-hot-logo-number {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+    }
+
+    .mobile-hot-logo-number > div {
+        font-size: 26px;
+        color: #EE303C;
+        margin-left: 10px;
+    }
+
+    .mobile-menu-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 51px;
+    }
 }
 
 

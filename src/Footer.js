@@ -17,7 +17,7 @@ function Footer(props) {
     return (
         <div className={'footer'}>
             <div className={'footer-box'}>
-                <ul style={{paddingLeft: 30}}>
+                <ul>
                     {width > 1000 ?
                         <li className={'li-full-line'} style={{marginBottom: 38.3}}>
                             <img src={footer_unisonLogo} width={'202'} height={"43.39"} alt=""/>

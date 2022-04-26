@@ -92,7 +92,7 @@
   background-color: white;
   z-index: 2;
 
-  img {
+  svg {
     margin-top: 35px;
   }
 
@@ -223,6 +223,9 @@
   background-color: #006a9f;
   color: #fff;
   transition: .2s ease-out;
+  #Union_3, #Union_4, #Path_29, #Path_30, #Path_218, #Path_220{
+    fill: white;
+  }
 }
 
 .news-card-body {
@@ -230,6 +233,7 @@
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 13px 13px 12px 12px;
+
 
   img {
     width: 100%;
@@ -400,7 +404,7 @@
       margin-top: 7px;
     }
 
-    img {
+    svg {
       margin-top: 22px;
       width: 30px;
       height: 30px;
@@ -442,50 +446,57 @@
     margin: 50px 0 17px 0;
 
   }
-
-
+  .news-row{
+    overflow: auto;
+    gap: 10px;
+  }
+  .news-card-body img {
+    height: 166px;
+  }
   .news-card-body {
-    max-width: none;
     width: 277px;
-    cursor: pointer;
-    border: 2px solid transparent;
-    border-radius: 13px 13px 12px 12px;
-
-    img {
-      width: 100%;
-    }
 
     .box {
-      display: flex;
-      flex-direction: column;
-      background: #FFFFFF;
-      border-radius: 0 0 12px 12px;
-      height: 159px;
-      max-width: 444px;
-      align-items: center;
-
+      height: 94px;
 
       div {
-        max-width: 393px;
-        width: 100%;
-        color: #707070;
-        font-family: PantonMtav3;
+        width: 277px;
+        padding-left: 17px;
       }
-
       .text {
-        font-size: 20px;
-        margin-top: 32px;
+        margin-top: 14px;
+        font-size: 13px;
+        font-weight: bold;
       }
 
       .date {
-        font-size: 13px;
-        margin-top: 21px;
-        align-content: start;
-        color: #D0D0D0;
+        margin-top: 15px;
+        font-size: 11px;
       }
     }
   }
   .carousel-control-next-icon, .carousel-control-prev-icon{
     display: none;
+  }
+  .carousel-indicators [data-bs-target] {
+    width: 2px;
+    height: 2px;
+  }
+  .carousel-indicators {
+    margin-bottom: 2.1rem;
+    margin-top: 120px;
+  }
+  .carousel.slide{
+    height: 266px;
+  }
+  .carousel-item img {
+    height: 266px;
+    object-fit: cover;
+  }
+  .carousel-caption h3 {
+    font-size: 27px;
+  }
+  .carousel-caption p {
+    font-size: 15px;
   }
 }

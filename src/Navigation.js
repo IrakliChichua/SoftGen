@@ -10,6 +10,7 @@ import mobile_menu from "./images/mobile_menu.svg"
 import mobile_logo from "./images/mobile_logo.svg"
 import mobile_exit from "./images/mobile_exit.svg"
 import mobile_profile from "./images/mobile_profile.svg"
+import mobile_phone from "./images/mobile_phone.svg"
 import shield from "./images/shield.svg"
 import briefcase from "./images/briefcase.svg"
 import footer_unisonLogo from "./images/footer_unisonLogo.svg"
@@ -21,6 +22,7 @@ function Navigation() {
     const [showDropdown, setShowDropdown] = useState(false);
     const [isMenuOpen, setMenu] = useState(false);
     const [width, height] = WindowDimensions()
+    const [languageSwitch, setLanguageSwitch] = useState('geo');
 
     const handleMenu = () => {
         setMenu((prevState) => !prevState);
@@ -106,13 +108,13 @@ function Navigation() {
                     </div>
 
                     <Offcanvas show={isMenuOpen} onHide={handleMenu}>
-                        <Offcanvas.Header>
-                            <img id='mobile-logo' src={mobile_logo} alt=''/>
-                            <div className={'logo-exit'}>
-                                <img id='mobile-exit' src={mobile_exit} onClick={handleMenu} alt=''/>
-                            </div>
-                        </Offcanvas.Header>
                         <Offcanvas.Body>
+                            <div className={'mobile-menu-header'}>
+                                <img id='mobile-logo' src={mobile_logo} alt=''/>
+                                <div className={'logo-exit'}>
+                                    <img id='mobile-exit' src={mobile_exit} onClick={handleMenu} alt=''/>
+                                </div>
+                            </div>
                             <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
                                 <svg id="Component_8_12" data-name="Component 8 – 11" xmlns="http://www.w3.org/2000/svg"
                                      width="62" height="62" viewBox="0 0 62 62">
@@ -135,16 +137,57 @@ function Navigation() {
                                     </div>
                                     <div className={'mobile-card-body'}>
                                         <img src={briefcase} alt=''/>
-                                        <div> ფიზიკური პირებისთვის</div>
+                                        <div> იურიდიული პირებისთვის</div>
                                         <div className={'mobile-arrow-right'}/>
                                     </div>
                                     <div className={'mobile-card-body'}>
                                         <img src={shield} alt=''/>
-                                        <div> ფიზიკური პირებისთვის</div>
+                                        <div> სავალდებულო დაზღვევა</div>
                                         <div className={'mobile-arrow-right'}/>
                                     </div>
                                 </div>
                             </div>
+                            <Nav.Link className={'buy-online-box'} as={Link} to="/home">
+                                <img src={shopping_cart} width={24} height={24} style={{marginRight: 8}} alt=""/>
+                                <div style={{fontSize: 18, color: "white"}}>შეიძინე ონლაინ</div>
+                            </Nav.Link>
+                            <div className={'mobile-info'}>
+                                <Nav.Link as={Link} to="/students">ჩვენს შესახებ</Nav.Link>
+                                <Nav.Link as={Link} to="/students">სიახლეები</Nav.Link>
+                                <Nav.Link as={Link} to="/students">პარტნიორები</Nav.Link>
+                                <Nav.Link as={Link} to="/students">კონტაქტი</Nav.Link>
+                            </div>
+                            <div className={'mobile-menu-footer'}>
+                                <div className={'mobile-menu-languages'}>
+                                    <Nav.Item className={languageSwitch === 'geo' ? 'nav-item-active' : ''}
+                                              onClick={() => setLanguageSwitch('geo')}
+                                              href="#action/3.1">
+                                        <div
+                                            className={languageSwitch === 'geo' ? 'selected-language selected-sign' : 'selected-sign'}/>
+                                        ქართული</Nav.Item>
+                                    <Nav.Item className={languageSwitch === 'eng' ? 'nav-item-active' : ''}
+                                              onClick={() => setLanguageSwitch('eng')}
+                                              href="#action/3.2">
+                                        <div
+                                            className={languageSwitch === 'eng' ? 'selected-language selected-sign' : 'selected-sign'}/>
+
+                                        English</Nav.Item>
+                                    <Nav.Item className={languageSwitch === 'rus' ? 'nav-item-active' : ''}
+                                              onClick={() => setLanguageSwitch('rus')} style={{marginBottom: 0}}
+                                              href="#action/3.3">
+                                        <div
+                                            className={languageSwitch === 'rus' ? 'selected-language selected-sign' : 'selected-sign'}/>
+                                        Русский</Nav.Item>
+                                </div>
+                                <div className={'mobile-hot-container'}>
+                                    <div className={'hot-number'}> ცხელი ხაზი</div>
+                                    <div className={'mobile-hot-logo-number'}>
+                                        <img src={mobile_phone} width={24} height={24} alt=''/>
+                                        <div>991 991</div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </Offcanvas.Body>
                     </Offcanvas>
                 </>
