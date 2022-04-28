@@ -11,7 +11,7 @@
 }
 
 .navbar {
-    background-image: url("images/upper-nav.svg");
+    background-image: url("images/svg/upper-nav.svg");
     background-position-x: 60%;
     background-position-y: 71%;
     background-repeat: no-repeat;
@@ -65,11 +65,38 @@
 }
 
 .dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: auto;
     color: #D0D0D0;
+    border: none;
 
 }
+.dropdown-item > img {
+    width: 20.39px;
+    height: 13.59px;
+}
+.dropdown-toggle::after {
+    vertical-align: 0;
+    border: solid #D0D0D0;
+    border-width: 0 1.5px 1.5px 0;
+    display: inline-block;
+    margin-left: 6.47px;
+    padding: 3px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transition: .3s ease-out;
 
+}
+.dropdown:hover > .dropdown-toggle::after{
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: .3s ease-out;
+}
+.dropdown-menu[data-bs-popper] {
+    left: -17px;
+}
 /*.nav-link{
     padding: 0;
 }*/
@@ -111,7 +138,7 @@
 
 .lower-nav {
     max-width: 1424px;
-    padding-top: 33px;
+    padding-top: 30px;
     position: absolute;
     top: 49px;
     width: 100%;
@@ -131,6 +158,7 @@
 
 .lower-nav-nav > .right {
     padding-right: 30px;
+    min-height: 62px;
 }
 
 .nav-link {
@@ -152,11 +180,11 @@
 .lower-nav-nav > .left > .nav-link {
     margin-right: 48px;
 }
+.dropdown-flag-text{
 
-.background-gradient {
-    /*
-    background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
-    */
+}
+.dropdown-menu[data-bs-popper]{
+    margin: 0;
 }
 
 .buy-online-box {
@@ -262,10 +290,18 @@
         padding-right: 20px;
     }
 
+    .buy-online-box:hover{
+        margin: -5px 13px -5px -5px;
+    }
+
     .hot-number, .dropdown {
         font-size: 14px;
     }
+    .buy-online-box {
+        width: 190px;
+        margin-right: 18px;
 
+    }
     .my-office > div {
         font-size: 18px;
     }
@@ -282,18 +318,13 @@
         margin-right: 18px;
     }
 
-    .buy-online-box {
-        width: 190px;
-        margin-right: 18px;
-
-    }
-
     .buy-online-box:hover {
         margin-right: 13px;
     }
 
     .my-office > div {
         font-size: 16px;
+        min-height: 47px;
     }
 }
 

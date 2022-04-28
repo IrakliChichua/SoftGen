@@ -32,9 +32,11 @@
 .fb-icon {
   margin-bottom: 10px;
 }
-.ig-icon{
+
+.ig-icon {
   margin-bottom: 13px;
 }
+
 .linkedin-icon {
   margin-bottom: 18px;
 }
@@ -45,8 +47,7 @@
   margin: auto;
   max-width: 1364px;
   width: 100%;
-  padding-top: 45px;
-  padding-bottom: 55px;
+  padding: 45px 20px 55px 20px;
   color: #707070;
 
   ul {
@@ -59,18 +60,27 @@
       font: normal normal bold 16px/20px Helvetica Neue LT GEO;
     }
 
-    li:hover {
+    .nav-link:hover {
       text-decoration: underline;
       color: #006A9F;
     }
 
     li {
-      cursor: pointer;
+      display: flex;
+      align-items: center;
       margin-bottom: 20px;
       font: normal normal normal 16px/20px Helvetica Neue LT GEO;
 
-      img {
-        margin-right: 12px;
+      .nav-link {
+        cursor: pointer;
+        color: #707070;
+
+        img {
+          margin-right: 12px;
+        }
+      }
+      img{
+        cursor: pointer;
       }
     }
   }
@@ -85,8 +95,7 @@
     margin: auto;
     max-width: none;
     width: 100%;
-    padding-top: 37px;
-    padding-bottom: 30px;
+    padding: 37px 0 30px 0;
     color: #707070;
 
     .li-full-line {
@@ -99,20 +108,25 @@
     }
 
     .fb-icon {
-        margin-bottom: 19px;
+      margin-bottom: 19px;
     }
-    .ig-icon{
+
+    .ig-icon {
       margin-bottom: 18px;
     }
-    .youtube-icon{
+
+    .youtube-icon {
       margin-bottom: 22px;
     }
-    .linkedin-icon{
+
+    .linkedin-icon {
       margin-bottom: 20px;
     }
-    #unison-2021{
+
+    #unison-2021 {
       margin: 0;
     }
+
     ul {
       display: flex;
       flex-wrap: wrap;
@@ -127,16 +141,22 @@
         font: normal normal bold 16px Helvetica Neue LT GEO;
       }
 
-      li:hover {
+      .nav-link:hover {
         text-decoration: underline;
         color: #006A9F;
       }
 
       li {
+        display: flex;
+        align-items: center;
         width: 50%;
-        cursor: pointer;
         margin-bottom: 10px;
         font: normal normal normal 16px Helvetica Neue LT GEO;
+
+        .nav-link {
+          cursor: pointer;
+          color: #707070;
+        }
 
         img {
           margin-right: 12px;

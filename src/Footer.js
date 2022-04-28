@@ -1,18 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import WindowDimensions from "./WindowDimensions";
 import "./footer.scss"
-import footer_unisonLogo from "./images/footer_unisonLogo.svg"
-import app_store_badge from "./images/app_store_badge.svg"
-import google_play_badge from "./images/google_play_badge.png"
-import facebook_icon from "./images/facebook_icon.png"
-import instagram_icon from "./images/instagram_icon.png"
-import linkedin_icon from "./images/linkedin_icon.png"
-import youtube_icon from "./images/youtube_icon.png"
+import footer_unisonLogo from "./images/svg/footer_unisonLogo.svg"
+import app_store_badge from "./images/svg/app_store_badge.svg"
+import google_play_badge from "./images/png/google_play_badge.png"
+import facebook_icon from "./images/png/facebook_icon.png"
+import instagram_icon from "./images/png/instagram_icon.png"
+import linkedin_icon from "./images/png/linkedin_icon.png"
+import youtube_icon from "./images/png/youtube_icon.png"
+import {Nav} from "react-bootstrap";
+import {Link} from "react-router-dom";
 
 
 function Footer(props) {
 
-    const [width,height] = WindowDimensions()
+    const [width, height] = WindowDimensions()
 
     return (
         <div className={'footer'}>
@@ -29,9 +31,13 @@ function Footer(props) {
                     }
 
 
-                    <li> ჩვენ შესახებ</li>
-                    <li> კარიერა</li>
-                    <li className={'li-full-line'}> პარტნიორები</li>
+                    <li>
+                        <Nav.Link>შესახებ</Nav.Link>
+                    </li>
+                    <li>
+                        <Nav.Link>კარიერა</Nav.Link>
+                    </li>
+                    <li className={'li-full-line'}><Nav.Link>პარტნიორები</Nav.Link></li>
 
                     {width > 1000 ? <li className={'badges'}>
                         <img style={{marginRight: 3.73}} src={app_store_badge} alt=""/>
@@ -42,20 +48,26 @@ function Footer(props) {
                 </ul>
                 <ul>
                     <p>ინფორმაცია</p>
-                    <li>სიახლეები</li>
-                    {width > 1000 ? <li>საინფორმაციო ფურცელი</li> : <li>ხელშეკრულებები</li>}
-                    {width > 1000 ? <li>სამედიცინო პროვაიდერები</li> : <li>საინფორმაციო ფურცელი</li>}
-                    {width > 1000 ? <li>ხელშეკრულებები</li> : <li>სამედიცინო პროვაიდერები</li>}
+                    <li><Nav.Link>სიახლეები</Nav.Link></li>
+                    {width > 1000 ? <li><Nav.Link>საინფორმაციო ფურცელი</Nav.Link></li> :
+                        <li><Nav.Link>ხელშეკრულებები</Nav.Link></li>}
+                    {width > 1000 ? <li><Nav.Link>სამედიცინო პროვაიდერები</Nav.Link></li> :
+                        <li><Nav.Link>საინფორმაციო ფურცელი</Nav.Link></li>}
+                    {width > 1000 ? <li><Nav.Link>ხელშეკრულებები</Nav.Link></li> :
+                        <li><Nav.Link>სამედიცინო პროვაიდერები</Nav.Link></li>}
                     {width > 1000 ? <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია,
                         2021</li> : <></>}
 
                 </ul>
                 <ul>
                     <p>დახმარება</p>
-                    <li>კონტაქტი</li>
-                    {width > 1000 ? <li>მომხმარებლის ხმა</li> : <li>მონაცემთა დაცვა</li>}
-                    {width > 1000 ? <li>ხშირად დასმული კითხვები</li> : <li>მომხმარებლის <br/>ხმა</li>}
-                    {width > 1000 ? <li>მონაცემთა დაცვა</li> : <li>ხშირად დასმული კითხვები</li>}
+                    <li><Nav.Link>კონტაქტი</Nav.Link></li>
+                    {width > 1000 ? <li><Nav.Link>მომხმარებლის ხმა</Nav.Link></li> :
+                        <li><Nav.Link>მონაცემთა დაცვა</Nav.Link></li>}
+                    {width > 1000 ? <li><Nav.Link>ხშირად დასმული კითხვები</Nav.Link></li> :
+                        <li><Nav.Link>მომხმარებლის <br/>ხმა</Nav.Link></li>}
+                    {width > 1000 ? <li><Nav.Link>მონაცემთა დაცვა</Nav.Link></li> :
+                        <li><Nav.Link>ხშირად დასმული კითხვები</Nav.Link></li>}
                 </ul>
                 <ul>
                     {width > 1000 ? <p style={{marginBottom: 16}}>სოციალური ქსელები</p> :
@@ -65,33 +77,45 @@ function Footer(props) {
                         </li>
                     }
                     <li className={'fb-icon'}>
-                        <img src={facebook_icon} alt=""/>
-                        Facebook
+                        <Nav.Link as={Link} to="/students">
+                            <img src={facebook_icon} alt=""/>
+                            Facebook
+                        </Nav.Link>
                     </li>
                     <li className={'ig-icon'}>
-                        <img src={instagram_icon} alt=""/>
-                        Instagram
+                        <Nav.Link as={Link} to="/students">
+                            <img src={instagram_icon} alt=""/>
+                            Instagram
+                        </Nav.Link>
                     </li>
                     {width > 1000 ?
                         <li className={'linkedin-icon'}>
-                            <img src={linkedin_icon} alt=""/>
-                            Linkedin
+                            <Nav.Link as={Link} to="/students">
+                                <img src={linkedin_icon} alt=""/>
+                                Linkedin
+                            </Nav.Link>
                         </li>
                         :
                         <li className={'youtube-icon'}>
-                            <img src={youtube_icon} alt=""/>
-                            Youtube
+                            <Nav.Link as={Link} to="/students">
+                                <img src={youtube_icon} alt=""/>
+                                Youtube
+                            </Nav.Link>
                         </li>
                     }
                     {width > 1000 ?
                         <li className={'youtube-icon'}>
-                            <img src={youtube_icon} alt=""/>
-                            Youtube
+                            <Nav.Link as={Link} to="/students">
+                                <img src={youtube_icon} alt=""/>
+                                Youtube
+                            </Nav.Link>
                         </li>
                         :
                         <li className={'linkedin-icon'}>
-                            <img src={linkedin_icon} alt=""/>
-                            Linkedin
+                            <Nav.Link as={Link} to="/students">
+                                <img src={linkedin_icon} alt=""/>
+                                Linkedin
+                            </Nav.Link>
                         </li>
                     }
                     {width < 1000 ? <li className={'li-full-line'} id={'unison-2021'}>უნისონი © ყველა უფლება დაცულია,

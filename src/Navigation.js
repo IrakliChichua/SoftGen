@@ -2,25 +2,31 @@ import React, {useEffect, useState} from 'react';
 import {Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import "./nav.css"
-import logo from "./images/logo.svg"
-import shopping_cart from "./images/shopping_cart.svg"
-import profile from "./images/profile.svg"
-import phone from "./images/phone.svg"
-import mobile_menu from "./images/mobile_menu.svg"
-import mobile_logo from "./images/mobile_logo.svg"
-import mobile_exit from "./images/mobile_exit.svg"
-import mobile_profile from "./images/mobile_profile.svg"
-import mobile_phone from "./images/mobile_phone.svg"
-import shield from "./images/shield.svg"
-import briefcase from "./images/briefcase.svg"
-import footer_unisonLogo from "./images/footer_unisonLogo.svg"
+import logo from "./images/svg/logo.svg"
+import shopping_cart from "./images/svg/shopping_cart.svg"
+import uk_flag from "./images/png/uk_flag.png"
+import rus_flag from "./images/png/rus_flag.png"
+import geo_flag from "./images/png/geo_flag.png"
+import phone from "./images/svg/phone.svg"
+import mobile_menu from "./images/svg/mobile_menu.svg"
+import mobile_logo from "./images/svg/mobile_logo.svg"
+import mobile_exit from "./images/svg/mobile_exit.svg"
+import mobile_profile from "./images/svg/mobile_profile.svg"
+import mobile_phone from "./images/svg/mobile_phone.svg"
+import shield from "./images/svg/shield.svg"
+import briefcase from "./images/svg/briefcase.svg"
+import footer_unisonLogo from "./images/svg/footer_unisonLogo.svg"
 import WindowDimensions from "./WindowDimensions";
+import MyOffice from "./images/My_office";
 
+const flags = {'ka': 'ქართული', 'en': "English", 'ru': 'Русский'}
 
 function Navigation() {
 
     const [showDropdown, setShowDropdown] = useState(false);
     const [isMenuOpen, setMenu] = useState(false);
+    const [flag, setFlag] = useState('ka');
+
     const [width, height] = WindowDimensions()
     const [languageSwitch, setLanguageSwitch] = useState('geo');
 
@@ -41,13 +47,25 @@ function Navigation() {
                         <Nav.Link as={Link} to="/home" style={{padding: 0}}>კონტაქტი</Nav.Link>
                     </Nav>
                     <div className={'upper-right-nav'}>
-                        <NavDropdown title="ქართული"
+                        <NavDropdown title={flag === 'ka' ? <><img src={geo_flag} style={{marginRight:4}} alt=''/> {flags[flag]}</>
+                            : flag === 'en' ? <><img src={uk_flag} style={{marginRight:4}} alt=''/> {flags[flag]} </>
+                                : <><img src={rus_flag} style={{marginRight:4}} alt={''}/> {flags[flag]}</>
+                        }
                                      id="collasible-nav-dropdown"
                                      show={showDropdown}
                                      onMouseLeave={() => setShowDropdown(false)}
                                      onMouseOver={() => setShowDropdown(true)}>
-                            <NavDropdown.Item href="#action/3.1">ქართული</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">English</NavDropdown.Item>
+                            {flag !== 'ka' && <NavDropdown.Item href="#action/3.1" onClick={() => setFlag('ka')}>
+                                <img src={geo_flag} alt=''/>
+                                ქართული
+                            </NavDropdown.Item>}
+                            {flag !== 'en' && <NavDropdown.Item href="#action/3.2" onClick={() => setFlag('en')}>
+                                <img src={uk_flag} alt={''}/>
+                                English</NavDropdown.Item>}
+                            {flag !== 'ru' && <NavDropdown.Item href="#action/3.3" onClick={() => setFlag('ru')}>
+                                <img src={rus_flag} alt={''}/>
+                                Русский</NavDropdown.Item>}
+
                         </NavDropdown>
                         <div className={'hot-number'}>
                             <Navbar.Text id="hot">ცხელი ხაზი</Navbar.Text>
@@ -71,16 +89,7 @@ function Navigation() {
                                 <div>შეიძინე ონლაინ</div>
                             </Nav.Link>
                             <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
-                                <svg id="Component_8_11" data-name="Component 8 – 11" xmlns="http://www.w3.org/2000/svg"
-                                     width="62" height="62" viewBox="0 0 62 62">
-                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="31" cy="31" r="31" fill="#f2f2f2"/>
-                                    <g id="_24px-2" data-name="24px-2" transform="translate(13 13)">
-                                        <path id="Path_35" data-name="Path 35" d="M0,0H36V36H0Z" fill="none"/>
-                                        <path id="Path_36" data-name="Path 36"
-                                              d="M18,7.325A3.675,3.675,0,1,1,14.325,11,3.675,3.675,0,0,1,18,7.325m0,15.75c5.2,0,10.675,2.555,10.675,3.675v1.925H7.325V26.75c0-1.12,5.478-3.675,10.675-3.675M18,4a7,7,0,1,0,7,7A7,7,0,0,0,18,4Zm0,15.75c-4.673,0-14,2.345-14,7V32H32V26.75C32,22.1,22.673,19.75,18,19.75Z"
-                                              fill="#707070"/>
-                                    </g>
-                                </svg>
+                                <MyOffice/>
                                 <div>ჩემი<br/>კაბინეტი</div>
                             </Nav.Link>
                         </div>

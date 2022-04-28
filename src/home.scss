@@ -4,12 +4,19 @@
   align-items: center;
 }
 
+.background-gradient {
+  background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 0 0 no-repeat padding-box;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .carousel-control-prev-icon {
-  background-image: url("images/left2x.png");
+  background-image: url("images/png/left2x.png");
 }
 
 .carousel-control-next-icon {
-  background-image: url("images/right2x.png");
+  background-image: url("images/png/right2x.png");
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
@@ -38,8 +45,8 @@
 .carousel-indicators [data-bs-target] {
   border-radius: 50%;
   border: 2px solid white;
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   padding: 4px;
   background: none;
   opacity: 1;
@@ -71,10 +78,12 @@
 .insurance-cards-row {
   @include flexCenter();
   max-width: 1364px;
+  min-height: 220px;
   width: 100%;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
   position: relative;
-  top: -32px;
+  top: -52px;
 
 }
 
@@ -91,6 +100,8 @@
   width: 100%;
   background-color: white;
   z-index: 2;
+  transition: 300ms ease-in-out;
+
 
   svg {
     margin-top: 35px;
@@ -99,12 +110,43 @@
   div {
     margin-top: 15px;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
+.insurance-card-body:hover {
+  background-color: #006a9f;
+  color: #fff;
+  transition: .2s ease-out;
+  max-width: 268px;
+  margin-left: -4px;
+  margin-right: -4px;
+
+  #Union_3, #Union_4, #Path_29, #Path_30, #Path_218, #Path_220 {
+    fill: white;
+  }
+
+  height: 220px;
+  width: 268px;
+
+}
+
+.insurance-card-hover-box {
+  @include flexCenter();
+  width: 130px;
+  height: 35px;
+  border-radius: 12px;
+  background-color: #EE303C;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.insurance-card-hover-box:hover {
+  background-color: rgba(238, 48, 60, 0.87);
+}
+
 #home-background-2 {
-  background: url("images/Home_background_2.png");
+  background: url("images/png/Home_background_2.png");
   background-repeat: no-repeat;
   background-color: #F2F2F2;
   padding-bottom: 59px;
@@ -219,14 +261,6 @@
 
 }
 
-.insurance-card-body:hover {
-  background-color: #006a9f;
-  color: #fff;
-  transition: .2s ease-out;
-  #Union_3, #Union_4, #Path_29, #Path_30, #Path_218, #Path_220{
-    fill: white;
-  }
-}
 
 .news-card-body {
   max-width: 444px;
@@ -271,11 +305,11 @@
 }
 
 
-
 .all-news-box {
   @include flexCenter();
 
 }
+
 .arrow-right {
   border: solid #707070;
   border-width: 0 1px 1px 0;
@@ -284,9 +318,11 @@
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
 }
+
 .all-news:hover {
   color: mediumblue;
-  .arrow-right{
+
+  .arrow-right {
     border-color: mediumblue;
   }
 
@@ -356,7 +392,10 @@
       font-size: 16px;
     }
   }
-
+  .insurance-card-body:hover {
+    max-width: 228px;
+    height: 200px;
+  }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -380,6 +419,10 @@
     }
 
   }
+  .insurance-card-body:hover {
+    max-width: 198px;
+    height: 190px;
+  }
   .news-card-body .box div {
     max-width: 290px;
   }
@@ -391,6 +434,8 @@
   .insurance-cards-row {
     max-width: 346px;
     flex-wrap: wrap;
+    top: -32px;
+    gap: 0;
   }
 
   .insurance-card-body {
@@ -416,9 +461,9 @@
     margin-bottom: 47px;
 
   }
-.advantages-column{
-  padding: 0 28px 0 28px;
-}
+  .advantages-column {
+    padding: 0 28px 0 28px;
+  }
   .advantages-card-body {
     height: 150px;
     max-width: 153px;
@@ -446,7 +491,7 @@
     margin: 50px 0 17px 0;
 
   }
-  .news-row{
+  .news-row {
     overflow: auto;
     gap: 10px;
   }
@@ -463,6 +508,7 @@
         width: 277px;
         padding-left: 17px;
       }
+
       .text {
         margin-top: 14px;
         font-size: 13px;
@@ -475,7 +521,7 @@
       }
     }
   }
-  .carousel-control-next-icon, .carousel-control-prev-icon{
+  .carousel-control-next-icon, .carousel-control-prev-icon {
     display: none;
   }
   .carousel-indicators [data-bs-target] {
@@ -486,7 +532,7 @@
     margin-bottom: 2.1rem;
     margin-top: 120px;
   }
-  .carousel.slide{
+  .carousel.slide {
     height: 266px;
   }
   .carousel-item img {
@@ -497,6 +543,11 @@
     font-size: 27px;
   }
   .carousel-caption p {
+    margin-bottom: 110px;
     font-size: 15px;
   }
+  .insurance-card-body {
+    pointer-events: none;
+  }
 }
+
