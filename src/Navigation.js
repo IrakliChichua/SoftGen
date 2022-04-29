@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
+import {Container, Dropdown, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
 import "./nav.scss"
 import logo from "./images/svg/logo.svg"
@@ -18,12 +18,17 @@ import briefcase from "./images/svg/briefcase.svg"
 import footer_unisonLogo from "./images/svg/footer_unisonLogo.svg"
 import WindowDimensions from "./WindowDimensions";
 import MyOffice from "./images/My_office";
+import Health_and_safety from "./images/Health_and_safety";
+import Directions_car_filled from "./images/Directions_car_filled";
+import My_office from "./images/My_office";
+import Flight_takeoff from "./images/Flight_takeoff";
 
 const flags = {'ka': 'ქართული', 'en': "English", 'ru': 'Русский'}
 
 function Navigation() {
 
     const [showDropdown, setShowDropdown] = useState(false);
+    const [showNavDropdown, setShowNavDropdown] = useState(0);
     const [isMenuOpen, setMenu] = useState(false);
     const [flag, setFlag] = useState('ka');
 
@@ -34,6 +39,10 @@ function Navigation() {
         setMenu((prevState) => !prevState);
     };
 
+
+    function dropDownNumber(num) {
+        return showNavDropdown === num;
+    }
 
     return (
         <>
@@ -47,9 +56,10 @@ function Navigation() {
                         <Nav.Link as={Link} to="/home" style={{padding: 0}}>კონტაქტი</Nav.Link>
                     </Nav>
                     <div className={'upper-right-nav'}>
-                        <NavDropdown title={flag === 'ka' ? <><img src={geo_flag} style={{marginRight:4}} alt=''/> {flags[flag]}</>
-                            : flag === 'en' ? <><img src={uk_flag} style={{marginRight:4}} alt=''/> {flags[flag]} </>
-                                : <><img src={rus_flag} style={{marginRight:4}} alt={''}/> {flags[flag]}</>
+                        <NavDropdown title={flag === 'ka' ? <><img src={geo_flag} style={{marginRight: 4}}
+                                                                   alt=''/> {flags[flag]}</>
+                            : flag === 'en' ? <><img src={uk_flag} style={{marginRight: 4}} alt=''/> {flags[flag]} </>
+                                : <><img src={rus_flag} style={{marginRight: 4}} alt={''}/> {flags[flag]}</>
                         }
                                      id="collasible-nav-dropdown"
                                      show={showDropdown}
@@ -79,9 +89,46 @@ function Navigation() {
                             <Nav.Link as={Link} to="/home">
                                 <img id={'unison-logo'} src={logo} alt=""/>
                             </Nav.Link>
-                            <Nav.Link as={Link} to="/home">ფიზიკური<br/>პირებისთვის</Nav.Link>
-                            <Nav.Link as={Link} to="/home">იურიდიული<br/>პირებისთვის</Nav.Link>
-                            <Nav.Link as={Link} to="/home">სავალდებულო<br/>დაზღვევა</Nav.Link>
+                            <div
+                                className={`invisible-container ${showNavDropdown === 1 ? 'active' : ''}`}
+                                onMouseOver={() => setShowNavDropdown(1)}
+                                onMouseOut={() => setShowNavDropdown(0)}
+                            >
+                                <Dropdown className=" mx-2" show={dropDownNumber(1)}>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#">
+                                            <Health_and_safety/>
+                                            ინდივიდუალური ჯანმრთელობის დაზღვევა
+                                        </Dropdown.Item>
+                                        <Dropdown.Item href="#">
+                                            <Directions_car_filled/>
+                                            ავტოდაზღვევა - პაკეტები
+                                        </Dropdown.Item>
+                                        <Dropdown.Item href="#">
+                                            <Directions_car_filled/>
+                                            მძღოლის პასუხისმგებლობის დაზღვევა
+                                        </Dropdown.Item>
+                                        <Dropdown.Item href="#">
+                                            <Flight_takeoff/>
+                                            სამოგზაურო დაზღვევა
+                                        </Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(1)}
+                                          to="/home">ფიზიკური<br/>პირებისთვის</Nav.Link>
+                            </div>
+                            <div onMouseOver={() => setShowNavDropdown(2)}
+                                 onMouseOut={() => setShowNavDropdown(0)}
+                                 className={`invisible-container ${showNavDropdown === 2 ? 'active' : ''}`}>
+                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(2)}
+                                          to="/home">იურიდიული<br/>პირებისთვის</Nav.Link>
+                            </div>
+                            <div onMouseOver={() => setShowNavDropdown(3)}
+                                 onMouseOut={() => setShowNavDropdown(0)}
+                                 className={`invisible-container ${showNavDropdown === 3 ? 'active' : ''}`}>
+                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(3)}
+                                          to="/home">სავალდებულო<br/>დაზღვევა</Nav.Link>
+                            </div>
                         </div>
                         <div className={'right'}>
                             <Nav.Link className={'buy-online-box'} as={Link} to="/home">
@@ -103,7 +150,7 @@ function Navigation() {
             </div>
 
 
-            {width < 1000 ?
+            {width <= 1000 ?
                 <>
 
                     <div className={'mobile-nav'}>

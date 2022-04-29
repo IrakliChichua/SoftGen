@@ -1,10 +1,10 @@
 import React from 'react';
 
-function MyOffice(props) {
+function MyOffice({radius=31}) {
     return (
         <svg id="Component_8_11" data-name="Component 8 – 11" xmlns="http://www.w3.org/2000/svg"
              width="62" height="62" viewBox="0 0 62 62">
-            <circle id="Ellipse_1" data-name="Ellipse 1" cx="31" cy="31" r="31" fill="#f2f2f2"/>
+            <circle id="Ellipse_1" data-name="Ellipse 1" cx={radius} cy={radius} r={radius} fill="#f2f2f2"/>
             <g id="_24px-2" data-name="24px-2" transform="translate(13 13)">
                 <path id="Path_35" data-name="Path 35" d="M0,0H36V36H0Z" fill="none"/>
                 <path id="Path_36" data-name="Path 36"
