@@ -38,6 +38,7 @@ function Home(props) {
         <div>
             <Carousel className={'home-page-slider'}>
                 <Carousel.Item>
+                    <div className={'blue-background'}/>
                     <div className={'background-gradient'}/>
                     <img
                         className="d-block w-100"
@@ -51,6 +52,7 @@ function Home(props) {
 
                 </Carousel.Item>
                 <Carousel.Item>
+                    <div className={'blue-background'}/>
                     <div className={'background-gradient'}/>
                     <img
                         className="d-block w-100"
@@ -64,6 +66,7 @@ function Home(props) {
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
+                    <div className={'blue-background'}/>
                     <div className={'background-gradient'}/>
                     <img
                         className="d-block w-100"

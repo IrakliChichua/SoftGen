@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Container, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
 import {Link} from "react-router-dom";
-import "./nav.css"
+import "./nav.scss"
 import logo from "./images/svg/logo.svg"
 import shopping_cart from "./images/svg/shopping_cart.svg"
 import uk_flag from "./images/png/uk_flag.png"
