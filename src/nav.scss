@@ -7,7 +7,7 @@
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: mediumblue;
+  color: #006A9F;
 }
 
 .navbar {
@@ -44,7 +44,8 @@
   font-weight: 65;
   display: flex;
   flex-direction: row;
-  padding-right: 30px;
+  padding-right: 0;
+  margin-right: 30px;
   padding-left: 0;
 
 }
@@ -264,14 +265,12 @@
 }
 
 #Component_8_11:hover > #Ellipse_1 {
-
   fill: red;
   transition: 300ms ease-out;
 }
 
 #Component_8_11:hover > #_24px-2 > #Path_36 {
   fill: white;
-
 }
 
 #_24px-2 {
@@ -325,10 +324,12 @@
       }
 
     }
+
     .dropdown-item:hover {
       color: white;
       background-color: #EE303C;
-      svg > path, g > path{
+
+      svg > path, g > path {
         fill: white;
       }
     }
@@ -351,7 +352,8 @@
 
   .navbar-dark .navbar-nav .nav-link {
     font-size: 14px;
-    padding-right: 20px;
+    padding-right: 0;
+    margin-right: 20px;
   }
 
   .buy-online-box:hover {
@@ -368,6 +370,10 @@
   }
   .my-office > div {
     font-size: 18px;
+  }
+  .invisible-container {
+    margin-top: -41.5px;
+    margin-bottom: -35.5px;
   }
 
 }
@@ -392,6 +398,9 @@
   }
   .invisible-container {
     padding: 0 10px;
+  }
+  .mx-2 {
+    left: -10px;
   }
 }
 

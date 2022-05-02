@@ -23,6 +23,7 @@ import Health_and_safety from "./images/Health_and_safety";
 import Directions_car_filled from "./images/Directions_car_filled";
 import How_to_reg from "./images/How_to_reg";
 import FlightTakeoff from "./images/Flight_takeoff";
+import InsuranceCard from "./InsuranceCard";
 
 function Home(props) {
 
@@ -85,41 +86,11 @@ function Home(props) {
             <div id={'home-background-2'}>
                 <div className={'insurance-box'}>
                     <div className={'insurance-cards-row'}>
-                        <div className={'insurance-card-body'} onMouseOver={() => setInsuranceMouseOverBox(1)}
-                             onMouseOut={insuranceCardMouseOut}>
-                            <Property_insurance/>
-                            <div> ქონების <br/>დაზღვევა</div>
-                            <div className={insuranceMouseOverBox === 1 ? 'insurance-card-hover-box' : ''}
-                                 style={{fontSize: 16}}> {insuranceMouseOverBox === 1 ? 'შეიძინე' : ''} </div>
-                        </div>
-                        <div className={'insurance-card-body'} onMouseOver={() => setInsuranceMouseOverBox(2)}
-                             onMouseOut={insuranceCardMouseOut}>
-                            <Health_and_safety/>
-                            <div> ჯანმრთელობის <br/>დაზღვევა</div>
-                            <div className={insuranceMouseOverBox === 2 ? 'insurance-card-hover-box' : ''}
-                                 style={{fontSize: 16}}> {insuranceMouseOverBox === 2 ? 'შეიძინე' : ''} </div>
-                        </div>
-                        <div className={'insurance-card-body'} onMouseOver={() => setInsuranceMouseOverBox(3)}
-                             onMouseOut={insuranceCardMouseOut}>
-                            <Directions_car_filled/>
-                            <div> ავტომობილის <br/>დაზღვევა</div>
-                            <div className={insuranceMouseOverBox === 3 ? 'insurance-card-hover-box' : ''}
-                                 style={{fontSize: 16}}> {insuranceMouseOverBox === 3 ? 'შეიძინე' : ''} </div>
-                        </div>
-                        <div className={'insurance-card-body'} onMouseOver={() => setInsuranceMouseOverBox(4)}
-                             onMouseOut={insuranceCardMouseOut}>
-                            <How_to_reg/>
-                            <div> პასუხისმგებლობის <br/>დაზღვევა</div>
-                            <div className={insuranceMouseOverBox === 4 ? 'insurance-card-hover-box' : ''}
-                                 style={{fontSize: 16}}> {insuranceMouseOverBox === 4 ? 'შეიძინე' : ''} </div>
-                        </div>
-                        <div className={'insurance-card-body'} onMouseOver={() => setInsuranceMouseOverBox(5)}
-                             onMouseOut={insuranceCardMouseOut}>
-                            <FlightTakeoff/>
-                            <div> სამოგზაურო <br/>დაზღვევა</div>
-                            <div className={insuranceMouseOverBox === 5 ? 'insurance-card-hover-box' : ''}
-                                 style={{fontSize: 16}}> {insuranceMouseOverBox === 5 ? 'შეიძინე' : ''} </div>
-                        </div>
+                        <InsuranceCard text={<>ქონების <br/>დაზღვევა</>} svg={<Property_insurance/>}/>
+                        <InsuranceCard text={<>ჯანმრთელობის <br/>დაზღვევა</>} svg={<Health_and_safety/>}/>
+                        <InsuranceCard text={<>ავტომობილის <br/>დაზღვევა</>} svg={<Directions_car_filled/>}/>
+                        <InsuranceCard text={<>პასუხისმგებლობის <br/>დაზღვევა</>} svg={<How_to_reg/>}/>
+                        <InsuranceCard text={<>სამოგზაურო <br/>დაზღვევა</>} svg={<FlightTakeoff/>}/>
                         {width <= 1000 ?
                             <div className={'insurance-card-body'}>
                                 <img src={cart} style={{marginTop: 25}} alt=""/>

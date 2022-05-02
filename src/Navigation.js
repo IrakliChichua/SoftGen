@@ -22,13 +22,14 @@ import Health_and_safety from "./images/Health_and_safety";
 import Directions_car_filled from "./images/Directions_car_filled";
 import My_office from "./images/My_office";
 import Flight_takeoff from "./images/Flight_takeoff";
+import data from "bootstrap/js/src/dom/data";
+import InvisContainer from "./InvisContainer";
 
 const flags = {'ka': 'ქართული', 'en': "English", 'ru': 'Русский'}
 
 function Navigation() {
 
     const [showDropdown, setShowDropdown] = useState(false);
-    const [showNavDropdown, setShowNavDropdown] = useState(0);
     const [isMenuOpen, setMenu] = useState(false);
     const [flag, setFlag] = useState('ka');
 
@@ -39,10 +40,6 @@ function Navigation() {
         setMenu((prevState) => !prevState);
     };
 
-
-    function dropDownNumber(num) {
-        return showNavDropdown === num;
-    }
 
     return (
         <>
@@ -89,46 +86,9 @@ function Navigation() {
                             <Nav.Link as={Link} to="/home">
                                 <img id={'unison-logo'} src={logo} alt=""/>
                             </Nav.Link>
-                            <div
-                                className={`invisible-container ${showNavDropdown === 1 ? 'active' : ''}`}
-                                onMouseOver={() => setShowNavDropdown(1)}
-                                onMouseOut={() => setShowNavDropdown(0)}
-                            >
-                                <Dropdown className=" mx-2" show={dropDownNumber(1)}>
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#">
-                                            <Health_and_safety/>
-                                            ინდივიდუალური ჯანმრთელობის დაზღვევა
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#">
-                                            <Directions_car_filled/>
-                                            ავტოდაზღვევა - პაკეტები
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#">
-                                            <Directions_car_filled/>
-                                            მძღოლის პასუხისმგებლობის დაზღვევა
-                                        </Dropdown.Item>
-                                        <Dropdown.Item href="#">
-                                            <Flight_takeoff/>
-                                            სამოგზაურო დაზღვევა
-                                        </Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(1)}
-                                          to="/home">ფიზიკური<br/>პირებისთვის</Nav.Link>
-                            </div>
-                            <div onMouseOver={() => setShowNavDropdown(2)}
-                                 onMouseOut={() => setShowNavDropdown(0)}
-                                 className={`invisible-container ${showNavDropdown === 2 ? 'active' : ''}`}>
-                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(2)}
-                                          to="/home">იურიდიული<br/>პირებისთვის</Nav.Link>
-                            </div>
-                            <div onMouseOver={() => setShowNavDropdown(3)}
-                                 onMouseOut={() => setShowNavDropdown(0)}
-                                 className={`invisible-container ${showNavDropdown === 3 ? 'active' : ''}`}>
-                                <Nav.Link as={Link} onMouseOver={() => setShowNavDropdown(3)}
-                                          to="/home">სავალდებულო<br/>დაზღვევა</Nav.Link>
-                            </div>
+                            <InvisContainer number={1}/>
+                            <InvisContainer number={2}/>
+                            <InvisContainer number={3}/>
                         </div>
                         <div className={'right'}>
                             <Nav.Link className={'buy-online-box'} as={Link} to="/home">
