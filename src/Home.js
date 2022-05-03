@@ -86,11 +86,11 @@ function Home(props) {
             <div id={'home-background-2'}>
                 <div className={'insurance-box'}>
                     <div className={'insurance-cards-row'}>
-                        <InsuranceCard text={<>ქონების <br/>დაზღვევა</>} svg={<Property_insurance/>}/>
-                        <InsuranceCard text={<>ჯანმრთელობის <br/>დაზღვევა</>} svg={<Health_and_safety/>}/>
-                        <InsuranceCard text={<>ავტომობილის <br/>დაზღვევა</>} svg={<Directions_car_filled/>}/>
-                        <InsuranceCard text={<>პასუხისმგებლობის <br/>დაზღვევა</>} svg={<How_to_reg/>}/>
-                        <InsuranceCard text={<>სამოგზაურო <br/>დაზღვევა</>} svg={<FlightTakeoff/>}/>
+                        <InsuranceCard text={<>ქონების <br/>დაზღვევა</>} svg={<Property_insurance/>} font={"Helvetica_Neue_LT_GEO"}/>
+                        <InsuranceCard text={<>ჯანმრთელობის <br/>დაზღვევა</>} svg={<Health_and_safety/>} font={"Helvetica_Neue_LT_GEO"}/>
+                        <InsuranceCard text={<>ავტომობილის <br/>დაზღვევა</>} svg={<Directions_car_filled/>} font={"Helvetica_Neue_LT_GEO"}/>
+                        <InsuranceCard text={<>პასუხისმგებლობის <br/>დაზღვევა</>} svg={<How_to_reg/>} font={"Helvetica_Neue_LT_GEO"}/>
+                        <InsuranceCard text={<>სამოგზაურო <br/>დაზღვევა</>} svg={<FlightTakeoff/>} font={"Helvetica_Neue_LT_GEO"}/>
                         {width <= 1000 ?
                             <div className={'insurance-card-body'}>
                                 <img src={cart} style={{marginTop: 25}} alt=""/>

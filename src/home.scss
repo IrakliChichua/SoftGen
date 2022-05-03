@@ -63,7 +63,6 @@
     text-shadow: 0 3px 30px #006A9F;
     font-size: 48px;
     font-family: PantonMtav3;
-
   }
 }
 
@@ -137,7 +136,7 @@
   }
 
   div {
-    font-family: Helvetica-Neue-LT-GEO-75-Bold;
+    font-family: PantonMtav3;
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
@@ -171,6 +170,7 @@
   border-radius: 12px;
   background-color: #EE303C;
   margin-bottom: 10px;
+  font-family: Helvetica_Neue_LT_GEO;
 
 }
 
@@ -481,6 +481,7 @@
     margin: 5px;
 
     div {
+      font-family: Helvetica-Neue-LT-GEO-75-Bold;
       font-size: 12px;
       font-weight: bold;
       margin-top: 7px;

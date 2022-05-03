@@ -203,7 +203,7 @@ function Navigation() {
                                     <div className={'hot-number'}> ცხელი ხაზი</div>
                                     <div className={'mobile-hot-logo-number'}>
                                         <img src={mobile_phone} width={24} height={24} alt=''/>
-                                        <div><a href="tel:2991991">991 991</a></div>
+                                        <div><a href="tel:2991991">2 991 991</a></div>
                                     </div>
                                 </div>
                             </div>
