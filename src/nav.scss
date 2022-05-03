@@ -81,7 +81,9 @@
 .dropdown-toggle {
   color: #F2F2F2;
 }
-
+.offcanvas-end{
+  width: 100%;
+}
 .dropdown-item {
   display: flex;
   align-items: center;
@@ -487,9 +489,6 @@
   }
 
 
-  .offcanvas.end {
-    width: 100%;
-  }
 
 
   .logo-exit {
