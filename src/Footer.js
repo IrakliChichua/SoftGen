@@ -69,7 +69,7 @@ function Footer(props) {
                     {width > 1000 ? <li><Nav.Link>მონაცემთა დაცვა</Nav.Link></li> :
                         <li><Nav.Link>ხშირად დასმული კითხვები</Nav.Link></li>}
                 </ul>
-                <ul>
+                <ul className={'social-network'}>
                     {width > 1000 ? <p style={{marginBottom: 16}}>სოციალური ქსელები</p> :
                         <li className={'badges'}>
                             <img style={{marginRight: 18.34}} src={app_store_badge} width={120} height={40} alt=""/>
@@ -77,28 +77,28 @@ function Footer(props) {
                         </li>
                     }
                     <li className={'fb-icon'}>
-                        <Nav.Link as={Link} to="/students">
+                        <Nav.Link as={Link} to="/students" >
                             <img src={facebook_icon} alt=""/>
                             Facebook
                         </Nav.Link>
                     </li>
                     <li className={'ig-icon'}>
                         <Nav.Link as={Link} to="/students">
-                            <img src={instagram_icon} alt=""/>
+                            <img src={instagram_icon} alt="" style={{marginRight:14}}/>
                             Instagram
                         </Nav.Link>
                     </li>
                     {width > 1000 ?
                         <li className={'linkedin-icon'}>
                             <Nav.Link as={Link} to="/students">
-                                <img src={linkedin_icon} alt=""/>
+                                <img src={linkedin_icon} alt="" style={{marginRight:17}}/>
                                 Linkedin
                             </Nav.Link>
                         </li>
                         :
                         <li className={'youtube-icon'}>
                             <Nav.Link as={Link} to="/students">
-                                <img src={youtube_icon} alt=""/>
+                                <img src={youtube_icon} alt="" style={{marginRight:14}}/>
                                 Youtube
                             </Nav.Link>
                         </li>
@@ -106,14 +106,14 @@ function Footer(props) {
                     {width > 1000 ?
                         <li className={'youtube-icon'}>
                             <Nav.Link as={Link} to="/students">
-                                <img src={youtube_icon} alt=""/>
+                                <img src={youtube_icon} alt="" style={{marginRight:14}}/>
                                 Youtube
                             </Nav.Link>
                         </li>
                         :
                         <li className={'linkedin-icon'}>
                             <Nav.Link as={Link} to="/students">
-                                <img src={linkedin_icon} alt=""/>
+                                <img src={linkedin_icon} alt="" style={{marginRight:17}}/>
                                 Linkedin
                             </Nav.Link>
                         </li>

@@ -1,3 +1,21 @@
+@font-face {
+  font-family: Helvetica_Neue_LT_GEO;
+  src: url(/fonts/HelveticaNeueLTGEO-55Roman.ttf);
+}
+@font-face {
+  font-family: HelveticaNeueLTGEO-MT-55Roman;
+  src: url(fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
+  font-weight: normal;
+}
+* {
+  font-family: Helvetica_Neue_LT_GEO;
+  font-size: inherit;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 .nav {
   align-items: center;
   background-color: #242424;
@@ -41,7 +59,6 @@
 .navbar-dark .navbar-nav .nav-link {
   color: #D0D0D0;
   font-size: 16px;
-  font-weight: 65;
   display: flex;
   flex-direction: row;
   padding-right: 0;
@@ -62,7 +79,7 @@
 }
 
 .dropdown-toggle {
-  color: #D0D0D0;
+  color: #F2F2F2;
 }
 
 .dropdown-item {
@@ -83,19 +100,25 @@
 .dropdown-toggle::after {
   vertical-align: 0;
   border: solid #D0D0D0;
-  border-width: 0 1.5px 1.5px 0;
+  border-width: 0 2px 2px 0;
   display: inline-block;
   margin-left: 6.47px;
   padding: 3px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transition: .3s ease-out;
 
 }
 
+.dropdown-item:focus, .dropdown-item:hover {
+  background-color: #006A9F;
+  color: #FFFFFF;
+}
+
 .dropdown:hover > .dropdown-toggle::after {
-  transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
+
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
   transition: .3s ease-out;
 }
 
@@ -123,6 +146,11 @@
 
 #number {
   width: 71px;
+
+  a {
+    text-decoration: none;
+    color: #D0D0D0;
+  }
 }
 
 .dropdown-menu[data-bs-popper] {
@@ -130,18 +158,10 @@
 }
 
 .nav-link:focus, .nav-link:hover {
-  color: #D0D0D0;
+  color: #F2F2F2;
 }
 
-* {
-  font-family: "Helvetica Neue LT GEO";
-  font-size: inherit;
-  line-height: inherit;
-  margin: 0;
-  outline: none;
-  padding: 0;
-  scroll-behavior: smooth;
-}
+
 
 .lower-nav {
   max-width: 1424px;
@@ -157,6 +177,8 @@
   flex-direction: row;
   justify-content: space-between;
   background-color: transparent;
+  min-height: 70px;
+  margin-top: -4px;
 }
 
 .lower-nav-nav > .left {
@@ -166,6 +188,7 @@
 .lower-nav-nav > .right {
   padding-right: 30px;
   min-height: 62px;
+  min-height: 70px;
 }
 
 .nav-link {
@@ -226,7 +249,7 @@
 
 .phone {
   box-sizing: border-box;
-  background-color: red;
+  background-color: #EE303C;
   border-radius: 12px 0 0 12px;
   color: #fff;
   cursor: pointer;
@@ -265,7 +288,7 @@
 }
 
 #Component_8_11:hover > #Ellipse_1 {
-  fill: red;
+  fill: #EE303C;
   transition: 300ms ease-out;
 }
 
@@ -408,7 +431,10 @@
   .nav {
     display: none
   }
-
+  .footer-box ul .nav-link:hover{
+    text-decoration: none;
+    color: #707070;
+  }
   .mobile-nav {
     display: flex;
   }
@@ -461,7 +487,7 @@
   }
 
 
-  .offcanvas.offcanvas-start {
+  .offcanvas.end {
     width: 100%;
   }
 
@@ -563,13 +589,15 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 53px;
-  }
-
-  .mobile-info > .nav-link {
-    width: 50%;
-    color: #707070;
-    font-size: 16px;
-    margin-bottom: 37px;
+    .mobile-info-container{
+      width: 50%;
+      font-size: 16px;
+      margin-bottom: 37px;
+      .nav-link{
+        color: #707070;
+        width: fit-content;
+      }
+    }
   }
 
   .mobile-menu-footer {
@@ -586,7 +614,7 @@
 
   .mobile-menu-languages > .nav-item {
     display: flex;
-    width: auto;
+    width: fit-content;
     font-size: 16px;
     color: #707070;
     margin-bottom: 19px;
@@ -639,8 +667,12 @@
 
   .mobile-hot-logo-number > div {
     font-size: 26px;
-    color: #EE303C;
     margin-left: 10px;
+    a{
+      text-decoration: none;
+      color: #EE303C;
+    ;
+    }
   }
 
   .mobile-menu-header {

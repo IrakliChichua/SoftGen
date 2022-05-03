@@ -4,6 +4,11 @@
   align-items: center;
 }
 
+@font-face {
+  font-family: Helvetica-Neue-LT-GEO-75-Bold;
+  src: url(fonts/Linotype-Helvetica-Neue-LT-GEO-75-Bold.svg);
+  font-weight: normal;
+}
 *, ::after, ::before {
   box-sizing: initial;
 }
@@ -57,7 +62,8 @@
 
     p {
       margin-bottom: 20px;
-      font: normal normal bold 16px/20px Helvetica Neue LT GEO;
+      font-family: Helvetica-Neue-LT-GEO-75-Bold;
+
     }
 
     .nav-link:hover {
@@ -86,8 +92,16 @@
   }
 
 }
+.social-network>li>.nav-link:hover{
+  color: #707070;
+  text-decoration: none;
+}
 
 @media only screen and (max-width: 1000px) {
+  .footer-box ul .nav-link:hover{
+    text-decoration: none;
+    color: #707070;
+  }
 
   .footer-box {
     display: flex;
@@ -138,13 +152,9 @@
       p {
         width: 100%;
         margin-bottom: 20px;
-        font: normal normal bold 16px Helvetica Neue LT GEO;
       }
 
-      .nav-link:hover {
-        text-decoration: underline;
-        color: #006A9F;
-      }
+
 
       li {
         display: flex;

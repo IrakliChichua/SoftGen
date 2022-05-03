@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 export default InvisContainer;
 
-function InvisContainer({number}) {
+function InvisContainer({number, header}) {
 
     const [showNavDropdown, setShowNavDropdown] = useState(0);
     const [length, setLength] = useState(0)
@@ -50,7 +50,7 @@ function InvisContainer({number}) {
                 </Dropdown.Menu>
             </Dropdown>
             <Nav.Link as={Link} onMouseEnter={() => setShowNavDropdown(number)}
-                      to="/home">ფიზიკური<br/>პირებისთვის</Nav.Link>
+                      to="/home"><>{header}</></Nav.Link>
         </div>
     );
 }

@@ -76,7 +76,7 @@ function Navigation() {
                         </NavDropdown>
                         <div className={'hot-number'}>
                             <Navbar.Text id="hot">ცხელი ხაზი</Navbar.Text>
-                            <Navbar.Text id="number"> 2 991 991</Navbar.Text>
+                            <Navbar.Text id="number"><a href="tel:2991991">2 991 991</a></Navbar.Text>
                         </div>
                     </div>
                 </Navbar>
@@ -86,16 +86,16 @@ function Navigation() {
                             <Nav.Link as={Link} to="/home">
                                 <img id={'unison-logo'} src={logo} alt=""/>
                             </Nav.Link>
-                            <InvisContainer number={1}/>
-                            <InvisContainer number={2}/>
-                            <InvisContainer number={3}/>
+                            <InvisContainer number={1} header={<>ფიზიკური<br/>პირებისთვის</>}/>
+                            <InvisContainer number={2} header={<>იურიდიული<br/>პირებისთვის</>}/>
+                            <InvisContainer number={3} header={<>სავალდებულო<br/>დაზღვევა</>}/>
                         </div>
                         <div className={'right'}>
                             <Nav.Link className={'buy-online-box'} as={Link} to="/home">
                                 <img src={shopping_cart} style={{marginRight: 8}} alt=""/>
                                 <div>შეიძინე ონლაინ</div>
                             </Nav.Link>
-                            <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
+                            <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0, minHeight: 70}}>
                                 <MyOffice/>
                                 <div>ჩემი<br/>კაბინეტი</div>
                             </Nav.Link>
@@ -123,7 +123,7 @@ function Navigation() {
                         </div>
                     </div>
 
-                    <Offcanvas show={isMenuOpen} onHide={handleMenu}>
+                    <Offcanvas show={isMenuOpen} onHide={handleMenu} placement={"end"}>
                         <Offcanvas.Body>
                             <div className={'mobile-menu-header'}>
                                 <img id='mobile-logo' src={mobile_logo} alt=''/>
@@ -168,10 +168,14 @@ function Navigation() {
                                 <div style={{fontSize: 18, color: "white"}}>შეიძინე ონლაინ</div>
                             </Nav.Link>
                             <div className={'mobile-info'}>
-                                <Nav.Link as={Link} to="/students">ჩვენს შესახებ</Nav.Link>
-                                <Nav.Link as={Link} to="/students">სიახლეები</Nav.Link>
-                                <Nav.Link as={Link} to="/students">პარტნიორები</Nav.Link>
-                                <Nav.Link as={Link} to="/students">კონტაქტი</Nav.Link>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">ჩვენს შესახებ</Nav.Link>
+                                </div>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">სიახლეები</Nav.Link>
+                                </div>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">პარტნიორები</Nav.Link>
+                                </div>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">კონტაქტი</Nav.Link>
+                                </div>
                             </div>
                             <div className={'mobile-menu-footer'}>
                                 <div className={'mobile-menu-languages'}>
@@ -199,7 +203,7 @@ function Navigation() {
                                     <div className={'hot-number'}> ცხელი ხაზი</div>
                                     <div className={'mobile-hot-logo-number'}>
                                         <img src={mobile_phone} width={24} height={24} alt=''/>
-                                        <div>991 991</div>
+                                        <div><a href="tel:2991991">991 991</a></div>
                                     </div>
                                 </div>
                             </div>

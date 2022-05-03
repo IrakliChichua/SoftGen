@@ -37,7 +37,7 @@ function Home(props) {
 
     return (
         <div>
-            <Carousel className={'home-page-slider'}>
+            <Carousel className={'home-page-slider'} interval={5000}>
                 <Carousel.Item>
                     <div className={'blue-background'}/>
                     <div className={'background-gradient'}/>
@@ -107,6 +107,9 @@ function Home(props) {
                         </div>
                     </div>
                     : <> </>}
+                {width <=1000 ?
+                    <div className={'separator'}/> : <></>
+                }
                 <div id={'advantages-text'}>უპირატესობები</div>
                 <div className={'advantages-box'}>
                     {width > 1000 ?
@@ -117,7 +120,7 @@ function Home(props) {
                             </div>
                             <div className={'advantages-card-body'}>
                                 <img src={auto_awesome_black_24dp} alt=""/>
-                                <div> მაღალრეიტინგული გადამზღვევი კომპანიები</div>
+                                <div> მაღალრეიტინგული გადამზღვევი <br/>კომპანიები</div>
                             </div>
                             <div className={'advantages-card-body'}>
                                 <img src={touch_app_black_24dp} alt=""/>
@@ -162,6 +165,9 @@ function Home(props) {
                         </div>
                     }
                 </div>
+                {width <=1000 ?
+                    <div className={'separator'} style={{marginTop:12}}/> : <></>
+                }
                 <div id={'news-text'}>სიახლეები</div>
                 <div className={'news-box'}>
                     <div className={'news-row'}>

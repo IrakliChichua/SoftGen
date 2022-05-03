@@ -6,7 +6,7 @@ const InsuranceCard = ({text,svg}) =>{
     return (
         <div className={'insurance-card-body'} onMouseOver={() => setActive(true)}
              onMouseOut={()=>setActive(false)}>
-            {svg}
+            {   svg}
             <div> {text}</div>
             <div className={active && 'insurance-card-hover-box'}
                  style={{fontSize: 16}}> {active &&  'შეიძინე'} </div>

@@ -1,3 +1,26 @@
+@font-face {
+  font-family: PantonMtav3;
+  src: url(/fonts/Panton-Regular.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Helvetica_Neue_LT_GEO;
+  src: url(/fonts/HelveticaNeueLTGEO-55Roman.ttf);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Helvetica-Neue-LT-GEO-75-Bold;
+  src: url(fonts/Linotype-Helvetica-Neue-LT-GEO-75-Bold.svg);
+  font-weight: normal;
+}
+@font-face {
+  font-family: HelveticaNeueLTGEO-MT-55Roman;
+  src: url(fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
+  font-weight: normal;
+}
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
@@ -10,7 +33,8 @@
   height: 100%;
   width: 100%;
 }
-.blue-background{
+
+.blue-background {
   width: 100%;
   height: 129px;
   background-color: #006A9F;
@@ -62,11 +86,11 @@
 }
 
 .carousel-item {
+  cursor: pointer;
 
   img {
     opacity: 1;
     background: transparent linear-gradient(180deg, #006A9F00 0%, #006A9F 100%) 180% 180% no-repeat padding-box;
-
   }
 
 }
@@ -113,11 +137,13 @@
   }
 
   div {
+    font-family: Helvetica-Neue-LT-GEO-75-Bold;
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
   }
 }
+
 //#Union_3, #Union_4, #Path_29, #Path_30, #Path_218, #Path_220 {
 //  fill: ;
 //}
@@ -144,8 +170,8 @@
   height: 35px;
   border-radius: 12px;
   background-color: #EE303C;
-  font-size: 12px;
   margin-bottom: 10px;
+
 }
 
 .insurance-card-hover-box:hover {
@@ -207,7 +233,8 @@
   div {
     margin-top: 24px;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
+    color: #707070;
   }
 }
 
@@ -246,7 +273,7 @@
 
   div {
     font-size: 14px;
-    font-family: Helvetica Neue LT GEO MT, SS Roman;
+    font-family: HelveticaNeueLTGEO-MT-55Roman;
   }
 }
 
@@ -294,7 +321,7 @@
       max-width: 393px;
       width: 100%;
       color: #707070;
-      font-family: PantonMtav3;
+      font-family: Helvetica_Neue_LT_GEO;
     }
 
     .text {
@@ -327,10 +354,10 @@
 }
 
 .all-news:hover {
-  color: mediumblue;
+  color: #006A9F;
 
   .arrow-right {
-    border-color: mediumblue;
+    border-color: #006A9F;
   }
 
 }
@@ -438,13 +465,16 @@
 
 
 @media only screen and (max-width: 1000px) {
+
   .insurance-cards-row {
     max-width: 346px;
     flex-wrap: wrap;
     top: -32px;
     gap: 0;
   }
-
+  .news-card-body .box div {
+    max-width: 250px;
+  }
   .insurance-card-body {
     height: 113px;
     max-width: 163px;
@@ -464,7 +494,7 @@
   }
   #advantages-text {
     font-size: 36px;
-    margin-top: 70px;
+    margin-top: 0;
     margin-bottom: 47px;
 
   }
@@ -481,8 +511,8 @@
     }
 
     .number {
+      font-family: Helvetica-Neue-LT-GEO-75-Bold;
       font-size: 26px;
-      font-weight: bold;
       color: #006A9F;
       margin-bottom: 10px;
     }
@@ -493,17 +523,37 @@
       font-size: 13px;
     }
   }
+  .advantages-card-body:hover {
+    background: transparent;
+    border-radius: 12px;
+  }
 
   #news-text {
-    margin: 50px 0 17px 0;
+    margin: 0 0 17px 0;
 
   }
   .news-row {
     overflow: auto;
     gap: 10px;
   }
+  .news-row {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+  }
+  .news-row::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
+  .all-news:hover {
+    color: #707070;
+  }
+  .all-news:hover .arrow-right {
+    border-color: #707070;
+  }
   .news-card-body img {
     height: 166px;
+  }
+  .news-card-body:hover {
+    border-color: transparent;
   }
   .news-card-body {
     width: 277px;
@@ -513,13 +563,13 @@
 
       div {
         width: 277px;
-        padding-left: 17px;
+        padding: 0 17px;
       }
 
       .text {
         margin-top: 14px;
         font-size: 13px;
-        font-weight: bold;
+        font-family: Helvetica-Neue-LT-GEO-75-Bold;
       }
 
       .date {
@@ -552,12 +602,18 @@
   .carousel-caption p {
     margin-bottom: 110px;
     font-size: 15px;
+    visibility: collapse;
   }
   .insurance-card-body {
     pointer-events: none;
   }
-  .blue-background{
+  .blue-background {
     display: none;
+  }
+  .separator {
+    border: 1px solid #707070;
+    width: 109px;
+    margin: 35px auto;
   }
 }
 
