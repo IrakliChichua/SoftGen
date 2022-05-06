@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import WindowDimensions from "./WindowDimensions";
-import "./footer.scss"
-import footer_unisonLogo from "./images/svg/footer_unisonLogo.svg"
-import app_store_badge from "./images/svg/app_store_badge.svg"
-import google_play_badge from "./images/png/google_play_badge.png"
-import facebook_icon from "./images/png/facebook_icon.png"
-import instagram_icon from "./images/png/instagram_icon.png"
-import linkedin_icon from "./images/png/linkedin_icon.png"
-import youtube_icon from "./images/png/youtube_icon.png"
+import WindowDimensions from "../utils/WindowDimensions";
+import "../sass/footer.scss"
+import footer_unisonLogo from "../assets/images/svg/footer_unisonLogo.svg"
+import app_store_badge from "../assets/images/svg/app_store_badge.svg"
+import google_play_badge from "../assets/images/png/google_play_badge.png"
+import facebook_icon from "../assets/images/png/facebook_icon.png"
+import instagram_icon from "../assets/images/png/instagram_icon.png"
+import linkedin_icon from "../assets/images/png/linkedin_icon.png"
+import youtube_icon from "../assets/images/png/youtube_icon.png"
 import {Nav} from "react-bootstrap";
 import {Link} from "react-router-dom";
 

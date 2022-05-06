@@ -1,0 +1,22 @@
+@font-face {
+    font-family: PantonMtav3;
+    src: url(../fonts/Panton-Regular.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Helvetica_Neue_LT_GEO;
+    src: url(../fonts/HelveticaNeueLTGEO-55Roman.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Helvetica-Neue-LT-GEO-75-Bold;
+    src: url(../fonts/Linotype-Helvetica-Neue-LT-GEO-75-Bold.svg);
+    font-weight: normal;
+}
+@font-face {
+    font-family: HelveticaNeueLTGEO-MT-55Roman;
+    src: url(../fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
+    font-weight: normal;
+}

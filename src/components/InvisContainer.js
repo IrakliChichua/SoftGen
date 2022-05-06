@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {Dropdown, Nav} from "react-bootstrap";
-import Health_and_safety from "./images/Health_and_safety";
-import Directions_car_filled from "./images/Directions_car_filled";
-import Flight_takeoff from "./images/Flight_takeoff";
+import Health_and_safety from "../assets/images/Health_and_safety";
+import Directions_car_filled from "../assets/images/Directions_car_filled";
+import Flight_takeoff from "../assets/images/Flight_takeoff";
 import {Link} from "react-router-dom";
 
 export default InvisContainer;

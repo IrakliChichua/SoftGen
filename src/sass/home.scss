@@ -1,23 +1,23 @@
 @font-face {
   font-family: PantonMtav3;
-  src: url(/fonts/Panton-Regular.ttf);
+  src: url(../fonts/Panton-Regular.ttf);
   font-weight: normal;
 }
 
 @font-face {
   font-family: Helvetica_Neue_LT_GEO;
-  src: url(/fonts/HelveticaNeueLTGEO-55Roman.ttf);
+  src: url(../fonts/HelveticaNeueLTGEO-55Roman.ttf);
   font-weight: normal;
 }
 
 @font-face {
   font-family: Helvetica-Neue-LT-GEO-75-Bold;
-  src: url(fonts/Linotype-Helvetica-Neue-LT-GEO-75-Bold.svg);
+  src: url(../fonts/Linotype-Helvetica-Neue-LT-GEO-75-Bold.svg);
   font-weight: normal;
 }
 @font-face {
   font-family: HelveticaNeueLTGEO-MT-55Roman;
-  src: url(fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
+  src: url(../fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
   font-weight: normal;
 }
 
@@ -41,11 +41,11 @@
 }
 
 .carousel-control-prev-icon {
-  background-image: url("images/png/left2x.png");
+  background-image: url("../assets/images/png/left2x.png");
 }
 
 .carousel-control-next-icon {
-  background-image: url("images/png/right2x.png");
+  background-image: url("../assets/images/png/right2x.png");
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
@@ -171,15 +171,20 @@
   background-color: #EE303C;
   margin-bottom: 10px;
   font-family: Helvetica_Neue_LT_GEO;
+  transition: 0.3s ease-out;
 
 }
 
 .insurance-card-hover-box:hover {
   background-color: rgba(238, 48, 60, 0.87);
+  padding: 4px 2px;
+  margin-top: 11px;
+  margin-bottom: 6px;
+  transition: 0.3s ease-out;
 }
 
 #home-background-2 {
-  background: url("images/png/Home_background_2.png");
+  background: url("../assets/images/png/Home_background_2.png");
   background-repeat: no-repeat;
   background-color: #F2F2F2;
   padding-bottom: 59px;
@@ -423,7 +428,7 @@
     width: 100%;
 
     div {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
   .insurance-card-body:hover {

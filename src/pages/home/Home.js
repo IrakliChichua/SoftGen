@@ -1,29 +1,30 @@
 import React, {useEffect, useState} from 'react';
-import "./home.scss"
+import "../../sass/home.scss"
 import {Carousel} from "react-bootstrap";
-import WindowDimensions from "./WindowDimensions";
-import bgi from "./images/png/bgi.png"
-import user_24px from "./images/svg/user_24px.svg"
-import auto_awesome_black_24dp from "./images/svg/auto_awesome_black_24dp.svg"
-import hotel_class_black_24dp from "./images/svg/hotel_class_black_24dp.svg"
-import people_outline_black_24dp from "./images/svg/people_outline_black_24dp.svg"
-import touch_app_black_24dp from "./images/svg/touch_app_black_24dp.svg"
-import timer_black_24dp from "./images/svg/timer_black_24dp.svg"
-import mobile_version_user from "./images/svg/mobile_version_user.svg"
-import business_black from "./images/svg/business_black.svg"
-import date_range_black from "./images/svg/date_range_black.svg"
-import payments_black from "./images/svg/payments_black.svg"
-import cart from "./images/svg/cart.svg"
-import news_pic_1 from "./images/png/news_pic_1.png"
-import news_pic_2 from "./images/png/news_pic_2.png"
-import news_pic_3 from "./images/png/news_pic_3.png"
-import phone from "./images/svg/phone.svg";
-import Property_insurance from "./images/Property_insurance";
-import Health_and_safety from "./images/Health_and_safety";
-import Directions_car_filled from "./images/Directions_car_filled";
-import How_to_reg from "./images/How_to_reg";
-import FlightTakeoff from "./images/Flight_takeoff";
-import InsuranceCard from "./InsuranceCard";
+import WindowDimensions from "../../utils/WindowDimensions";
+import bgi from "../../assets/images/png/bgi.png"
+import user_24px from "../../assets/images/svg/user_24px.svg"
+import auto_awesome_black_24dp from "../../assets/images/svg/auto_awesome_black_24dp.svg"
+import hotel_class_black_24dp from "../../assets/images/svg/hotel_class_black_24dp.svg"
+import people_outline_black_24dp from "../../assets/images/svg/people_outline_black_24dp.svg"
+import touch_app_black_24dp from "../../assets/images/svg/touch_app_black_24dp.svg"
+import timer_black_24dp from "../../assets/images/svg/timer_black_24dp.svg"
+import mobile_version_user from "../../assets/images/svg/mobile_version_user.svg"
+import business_black from "../../assets/images/svg/business_black.svg"
+import date_range_black from "../../assets/images/svg/date_range_black.svg"
+import payments_black from "../../assets/images/svg/payments_black.svg"
+import cart from "../../assets/images/svg/cart.svg"
+import news_pic_1 from "../../assets/images/png/news_pic_1.png"
+import news_pic_2 from "../../assets/images/png/news_pic_2.png"
+import news_pic_3 from "../../assets/images/png/news_pic_3.png"
+import phone from "../../assets/images/svg/phone.svg";
+import Property_insurance from "../../assets/images/Property_insurance";
+import Health_and_safety from "../../assets/images/Health_and_safety";
+import Directions_car_filled from "../../assets/images/Directions_car_filled";
+import How_to_reg from "../../assets/images/How_to_reg";
+import FlightTakeoff from "../../assets/images/Flight_takeoff";
+import InsuranceCard from "../../components/card-items/InsuranceCard";
+import NewsCardBody from "../../components/card-items/NewsCardBody";
 
 function Home(props) {
 
@@ -171,27 +172,9 @@ function Home(props) {
                 <div id={'news-text'}>სიახლეები</div>
                 <div className={'news-box'}>
                     <div className={'news-row'}>
-                        <div className={'news-card-body'}>
-                            <img src={news_pic_1} alt=""/>
-                            <div className={'box'}>
-                                <div className={'text'}>ქალაქგარეთ ცხოვრების 10 გავრცელებული მითი</div>
-                                <div className={'date'}>6 ნოემბერი</div>
-                            </div>
-                        </div>
-                        <div className={'news-card-body'}>
-                            <img src={news_pic_2} alt=""/>
-                            <div className={'box'}>
-                                <div className={'text'}> ჯანსაღი კვების საიდუმლო სამხრეთ აზიიდან</div>
-                                <div className={'date'}>28 ოქტომბერი</div>
-                            </div>
-                        </div>
-                        <div className={'news-card-body'}>
-                            <img src={news_pic_3} alt=""/>
-                            <div className={'box'}>
-                                <div className={'text'}> ავტომობილის სალონის მოვლის თანამედროვე ხერხები</div>
-                                <div className={'date'}>14 ოქტომბერი</div>
-                            </div>
-                        </div>
+                        <NewsCardBody img={news_pic_1} text={<>ჯანსაღი კვების საიდუმლო სამხრეთ აზიიდან</>} date={<>6 ნოემბერი</>}/>
+                        <NewsCardBody img={news_pic_2} text={<>ქალაქგარეთ ცხოვრების 10 გავრცელებული მითი</>} date={<>28 ოქტომბერი</>}/>
+                        <NewsCardBody img={news_pic_3} text={<>ავტომობილის სალონის მოვლის თანამედროვე ხერხები</>} date={<>14 ოქტომბერი</>}/>
                     </div>
                 </div>
                 <div className={'all-news-box'}>

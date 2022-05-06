@@ -1,10 +1,10 @@
 @font-face {
   font-family: Helvetica_Neue_LT_GEO;
-  src: url(/fonts/HelveticaNeueLTGEO-55Roman.ttf);
+  src: url(../fonts/HelveticaNeueLTGEO-55Roman.ttf);
 }
 @font-face {
   font-family: HelveticaNeueLTGEO-MT-55Roman;
-  src: url(fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
+  src: url(../fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
   font-weight: normal;
 }
 * {
@@ -29,7 +29,7 @@
 }
 
 .navbar {
-  background-image: url("images/svg/upper-nav.svg");
+  background-image: url("../assets/images/svg/upper-nav.svg");
   background-position-x: 60%;
   background-position-y: 71%;
   background-repeat: no-repeat;
@@ -681,6 +681,27 @@
   }
 
 
+}
+
+.sos-container{
+  display: flex;
+  background-color: #EE303C;
+  justify-content: center;
+  padding: 6px 31px;
+  border-radius: 6px;
+  color: white !important;
+  .nav-link:hover{
+    color: white !important;
+  }
+  transition:  0.3s linear;
+
+}
+.sos-container:hover{
+  padding-bottom: 10px;
+  background-color: #E2202C;
+  margin-top: 5px;
+  transition-property: padding-bottom;
+  transition:  0.3s linear;
 }
 
 

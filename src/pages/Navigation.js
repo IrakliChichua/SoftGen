@@ -1,33 +1,40 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, router} from 'react';
 import {Container, Dropdown, Nav, Navbar, NavDropdown, Offcanvas} from "react-bootstrap";
-import {Link} from "react-router-dom";
-import "./nav.scss"
-import logo from "./images/svg/logo.svg"
-import shopping_cart from "./images/svg/shopping_cart.svg"
-import uk_flag from "./images/png/uk_flag.png"
-import rus_flag from "./images/png/rus_flag.png"
-import geo_flag from "./images/png/geo_flag.png"
-import phone from "./images/svg/phone.svg"
-import mobile_menu from "./images/svg/mobile_menu.svg"
-import mobile_logo from "./images/svg/mobile_logo.svg"
-import mobile_exit from "./images/svg/mobile_exit.svg"
-import mobile_profile from "./images/svg/mobile_profile.svg"
-import mobile_phone from "./images/svg/mobile_phone.svg"
-import shield from "./images/svg/shield.svg"
-import briefcase from "./images/svg/briefcase.svg"
-import footer_unisonLogo from "./images/svg/footer_unisonLogo.svg"
-import WindowDimensions from "./WindowDimensions";
-import MyOffice from "./images/My_office";
-import Health_and_safety from "./images/Health_and_safety";
-import Directions_car_filled from "./images/Directions_car_filled";
-import My_office from "./images/My_office";
-import Flight_takeoff from "./images/Flight_takeoff";
+import {Link, Router, useLocation} from "react-router-dom";
+import "../sass/nav.scss"
+import logo from "../assets/images/svg/logo.svg"
+import shopping_cart from "../assets/images/svg/shopping_cart.svg"
+import uk_flag from "../assets/images/png/uk_flag.png"
+import rus_flag from "../assets/images/png/rus_flag.png"
+import geo_flag from "../assets/images/png/geo_flag.png"
+import phone from "../assets/images/svg/phone.svg"
+import mobile_menu from "../assets/images/svg/mobile_menu.svg"
+import mobile_logo from "../assets/images/svg/mobile_logo.svg"
+import mobile_exit from "../assets/images/svg/mobile_exit.svg"
+import mobile_profile from "../assets/images/svg/mobile_profile.svg"
+import mobile_phone from "../assets/images/svg/mobile_phone.svg"
+import shield from "../assets/images/svg/shield.svg"
+import briefcase from "../assets/images/svg/briefcase.svg"
+import footer_unisonLogo from "../assets/images/svg/footer_unisonLogo.svg"
+import WindowDimensions from "../utils/WindowDimensions";
+import MyOffice from "../assets/images/My_office";
+import Health_and_safety from "../assets/images/Health_and_safety";
+import Directions_car_filled from "../assets/images/Directions_car_filled";
+import My_office from "../assets/images/My_office";
+import Flight_takeoff from "../assets/images/Flight_takeoff";
 import data from "bootstrap/js/src/dom/data";
-import InvisContainer from "./InvisContainer";
+import InvisContainer from "../components/InvisContainer";
+import {BrowserRouter, Route} from "react-router-dom";
 
 const flags = {'ka': 'ქართული', 'en': "English", 'ru': 'Русский'}
 
 function Navigation() {
+    const rout = useLocation();
+
+    console.log("dsdsd", rout.pathname)
+
+    let path = rout.pathname.slice(1);
+
 
     const [showDropdown, setShowDropdown] = useState(false);
     const [isMenuOpen, setMenu] = useState(false);
@@ -43,14 +50,18 @@ function Navigation() {
 
     return (
         <>
-            <div className={'nav'}>
+            <div className={`nav ${path}`}>
                 <Navbar variant="dark">
                     <Nav className={'upper-left-nav'} activeKey="/">
                         <Nav.Link as={Link} to="/home">მთავარი</Nav.Link>
                         <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
-                        <Nav.Link as={Link} to="/home">სიახლეები</Nav.Link>
+                        <Nav.Link as={Link} to="/news">სიახლეები</Nav.Link>
                         <Nav.Link as={Link} to="/home">პარტნიორები</Nav.Link>
                         <Nav.Link as={Link} to="/home" style={{padding: 0}}>კონტაქტი</Nav.Link>
+                        <div className={"sos-container"}>
+                            <Nav.Link className={"sos"} as={Link} to="/home"
+                                      style={{marginRight: 0, color: "white"}}>SOS</Nav.Link>
+                        </div>
                     </Nav>
                     <div className={'upper-right-nav'}>
                         <NavDropdown title={flag === 'ka' ? <><img src={geo_flag} style={{marginRight: 4}}
@@ -95,7 +106,8 @@ function Navigation() {
                                 <img src={shopping_cart} style={{marginRight: 8}} alt=""/>
                                 <div>შეიძინე ონლაინ</div>
                             </Nav.Link>
-                            <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0, minHeight: 70}}>
+                            <Nav.Link className={'my-office'} as={Link} to="/home"
+                                      style={{padding: 0, marginRight: 0, minHeight: 70}}>
                                 <MyOffice/>
                                 <div>ჩემი<br/>კაბინეტი</div>
                             </Nav.Link>
@@ -168,13 +180,17 @@ function Navigation() {
                                 <div style={{fontSize: 18, color: "white"}}>შეიძინე ონლაინ</div>
                             </Nav.Link>
                             <div className={'mobile-info'}>
-                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">ჩვენს შესახებ</Nav.Link>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">ჩვენს
+                                    შესახებ</Nav.Link>
                                 </div>
-                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">სიახლეები</Nav.Link>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link}
+                                                                                   to="/students">სიახლეები</Nav.Link>
                                 </div>
-                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">პარტნიორები</Nav.Link>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link}
+                                                                                   to="/students">პარტნიორები</Nav.Link>
                                 </div>
-                                <div className={'mobile-info-container'}><Nav.Link as={Link} to="/students">კონტაქტი</Nav.Link>
+                                <div className={'mobile-info-container'}><Nav.Link as={Link}
+                                                                                   to="/students">კონტაქტი</Nav.Link>
                                 </div>
                             </div>
                             <div className={'mobile-menu-footer'}>
