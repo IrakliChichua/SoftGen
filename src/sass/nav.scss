@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
   font-family: Helvetica_Neue_LT_GEO;
   src: url(../fonts/HelveticaNeueLTGEO-55Roman.ttf);
 }
@@ -6,7 +6,7 @@
   font-family: HelveticaNeueLTGEO-MT-55Roman;
   src: url(../fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
   font-weight: normal;
-}
+}*/
 * {
   font-family: Helvetica_Neue_LT_GEO;
   font-size: inherit;
@@ -15,6 +15,9 @@
   outline: none;
   padding: 0;
   scroll-behavior: smooth;
+  input:focus::placeholder {
+    color: transparent;
+  }
 }
 .nav {
   align-items: center;
@@ -47,6 +50,29 @@
   align-items: center;
   display: flex;
   padding-left: 30px;
+  .sos-dropdown{
+    z-index: 9;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    margin-right: 0;
+    .sos-dropdown-menu{
+      left: -185px;
+      width: 370px;
+      border-radius: 8px;
+      background-color: #E2202C;
+      top: 26px;
+      border: none;
+      .dropdown-item{
+        font-size: 18px;
+        color: white;
+        justify-content: center;
+        &:hover, &:focus{
+          background-color: #EE303C;
+        }
+      }
+    }
+  }
 }
 
 .navbar-nav {
@@ -139,16 +165,25 @@
 
 .hot-number {
   cursor: pointer;
+  .hot-number-underline{
+    height: 3px;
+    margin-top: -3px;
+    position: relative;
+    background-color: red;
+    z-index: 9;
+    bottom: -12px;
+    cursor: default;
+  }
 }
 
 #hot {
   width: 94px;
-  padding-right: 11px;
+  padding-right: 8px;
 }
 
 #number {
   width: 71px;
-
+  margin-left: 7px;
   a {
     text-decoration: none;
     color: #D0D0D0;
@@ -234,9 +269,10 @@
 }
 
 .buy-online-box:hover {
-  padding: 5px;
-  margin: -5px 43px -5px -5px;
+  padding: 2px;
+  margin: -2px 46px -2px -2px;
   transition: 300ms ease-out;
+  background-color: #E2202C;
 
 }
 
@@ -382,11 +418,16 @@
   }
 
   .buy-online-box:hover {
-    margin: -5px 13px -5px -5px;
+    margin: -2px 16px -2px -2px;
   }
 
   .hot-number, .dropdown {
     font-size: 14px;
+  }
+  .hot-number{
+    .hot-number-underline{
+      bottom: -13.5px;
+    }
   }
   .buy-online-box {
     width: 190px;
@@ -413,9 +454,6 @@
     margin-right: 18px;
   }
 
-  .buy-online-box:hover {
-    margin-right: 13px;
-  }
 
   .my-office > div {
     font-size: 16px;
@@ -498,10 +536,14 @@
   .offcanvas-body {
     padding: 43px 38px 61px 36px;
   }
-
+  .my-office-container{
+    display: flex;
+    align-items: center;
+  }
   .my-office {
     display: flex;
     align-items: center;
+    width: fit-content;
   }
 
   .my-office > img {
@@ -655,6 +697,7 @@
     color: #707070;
     font-size: 14px;
     margin-left: auto;
+
   }
 
   .mobile-hot-logo-number {
@@ -697,11 +740,31 @@
 
 }
 .sos-container:hover{
+  .sos-dropdown{
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s, visibility 0.3s;
+  }
   padding-bottom: 10px;
   background-color: #E2202C;
-  margin-top: 5px;
+  margin-top: 4px;
   transition-property: padding-bottom;
   transition:  0.3s linear;
 }
+#sos-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  width: 56px;
+  height: 56px;
+  background-color: #EE303C;
+  border-radius: 12px;
+  color: white;
+  text-decoration: none;
+  margin-left: auto;
+}
+
 
 

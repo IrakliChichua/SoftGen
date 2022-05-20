@@ -7,6 +7,7 @@ import {Alert} from "react-bootstrap";
 import App from "./App";
 import Home from "./pages/home/Home";
 import News from "./pages/news/News";
+import About from "./pages/About/About";
 
 
 ReactDOM.render(
@@ -16,6 +17,7 @@ ReactDOM.render(
                 <Route index element={<Home/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/news' element={<News/>}/>
+                <Route path='/about' element={<About/>}/>
                 <Route path='*' element={<Alert variant="danger"> 404 page not found</Alert>}/>
             </Route>
         </Routes>

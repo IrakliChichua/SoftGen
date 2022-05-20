@@ -14,6 +14,8 @@ import business_black from "../../assets/images/svg/business_black.svg"
 import date_range_black from "../../assets/images/svg/date_range_black.svg"
 import payments_black from "../../assets/images/svg/payments_black.svg"
 import cart from "../../assets/images/svg/cart.svg"
+import buy_online_arrow from "../../assets/images/svg/buy_online_arrow.svg"
+import buy_online_background from "../../assets/images/svg/buy_online_background.svg"
 import news_pic_1 from "../../assets/images/png/news_pic_1.png"
 import news_pic_2 from "../../assets/images/png/news_pic_2.png"
 import news_pic_3 from "../../assets/images/png/news_pic_3.png"
@@ -83,7 +85,13 @@ function Home(props) {
                 </Carousel.Item>
 
             </Carousel>
-            <div className={'red-line'}/>
+            <div className={'red-line'}>
+                <div className={"buy-online-arrow"}>
+                    <img id={"buy-online-arrow-background"} src={buy_online_background} alt=''/>
+                    <div>შეიძინე ონლაინ</div>
+                    <img id={"buy-online-the-arrow"} src={buy_online_arrow} alt=''/>
+                </div>
+            </div>
             <div id={'home-background-2'}>
                 <div className={'insurance-box'}>
                     <div className={'insurance-cards-row'}>

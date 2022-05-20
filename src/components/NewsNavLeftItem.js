@@ -4,7 +4,7 @@ function NewsNavLeftItem({svg, text, activeTab, setActiveTab, tab}) {
     return (
         <div className={`item ${activeTab === tab && 'active-nav'}`} onClick={() => setActiveTab(tab)}>
             <div className={'top'}>
-                <img src={svg} alt=''/>
+                {svg}
                 <div className={'text'}>{text}</div>
             </div>
 

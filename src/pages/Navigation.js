@@ -13,6 +13,7 @@ import mobile_logo from "../assets/images/svg/mobile_logo.svg"
 import mobile_exit from "../assets/images/svg/mobile_exit.svg"
 import mobile_profile from "../assets/images/svg/mobile_profile.svg"
 import mobile_phone from "../assets/images/svg/mobile_phone.svg"
+import call_phone from "../assets/images/svg/call_phone.svg"
 import shield from "../assets/images/svg/shield.svg"
 import briefcase from "../assets/images/svg/briefcase.svg"
 import footer_unisonLogo from "../assets/images/svg/footer_unisonLogo.svg"
@@ -25,6 +26,7 @@ import Flight_takeoff from "../assets/images/Flight_takeoff";
 import data from "bootstrap/js/src/dom/data";
 import InvisContainer from "../components/InvisContainer";
 import {BrowserRouter, Route} from "react-router-dom";
+import Footer_unisonLogo from "../assets/images/Footer_unisonLogo";
 
 const flags = {'ka': 'ქართული', 'en': "English", 'ru': 'Русский'}
 
@@ -42,6 +44,7 @@ function Navigation() {
 
     const [width, height] = WindowDimensions()
     const [languageSwitch, setLanguageSwitch] = useState('geo');
+    const [showSosDropdown, setShowSosDropdown] = useState(false);
 
     const handleMenu = () => {
         setMenu((prevState) => !prevState);
@@ -54,14 +57,28 @@ function Navigation() {
                 <Navbar variant="dark">
                     <Nav className={'upper-left-nav'} activeKey="/">
                         <Nav.Link as={Link} to="/home">მთავარი</Nav.Link>
-                        <Nav.Link as={Link} to="/home">ჩვენს შესახებ</Nav.Link>
+                        <Nav.Link as={Link} to="/about">ჩვენს შესახებ</Nav.Link>
                         <Nav.Link as={Link} to="/news">სიახლეები</Nav.Link>
                         <Nav.Link as={Link} to="/home">პარტნიორები</Nav.Link>
                         <Nav.Link as={Link} to="/home" style={{padding: 0}}>კონტაქტი</Nav.Link>
-                        <div className={"sos-container"}>
+                        <div className={"sos-container"}
+                             onMouseOver={() => setShowSosDropdown(true)}
+                             onMouseOut={() => setShowSosDropdown(false)}
+                             >
                             <Nav.Link className={"sos"} as={Link} to="/home"
                                       style={{marginRight: 0, color: "white"}}>SOS</Nav.Link>
+                            <Dropdown className={"sos-dropdown"} show={showSosDropdown}>
+                                <Dropdown.Menu className={"sos-dropdown-menu"} >
+                                    <Dropdown.Item href="#">
+                                        მოხდა სადაზღვევო შემთხვევა
+                                    </Dropdown.Item>
+                                    <Dropdown.Item href="#">
+                                        შემთხვევის სტატუსის შემოწმება
+                                    </Dropdown.Item>
+                                </Dropdown.Menu>
+                            </Dropdown>
                         </div>
+
                     </Nav>
                     <div className={'upper-right-nav'}>
                         <NavDropdown title={flag === 'ka' ? <><img src={geo_flag} style={{marginRight: 4}}
@@ -73,21 +90,24 @@ function Navigation() {
                                      show={showDropdown}
                                      onMouseLeave={() => setShowDropdown(false)}
                                      onMouseOver={() => setShowDropdown(true)}>
-                            {flag !== 'ka' && <NavDropdown.Item href="#action/3.1" onClick={() => setFlag('ka')}>
-                                <img src={geo_flag} alt=''/>
-                                ქართული
-                            </NavDropdown.Item>}
-                            {flag !== 'en' && <NavDropdown.Item href="#action/3.2" onClick={() => setFlag('en')}>
-                                <img src={uk_flag} alt={''}/>
-                                English</NavDropdown.Item>}
-                            {flag !== 'ru' && <NavDropdown.Item href="#action/3.3" onClick={() => setFlag('ru')}>
-                                <img src={rus_flag} alt={''}/>
-                                Русский</NavDropdown.Item>}
+                                {flag !== 'ka' && <NavDropdown.Item href="#action/3.1" onClick={() => setFlag('ka')}>
+                                    <img src={geo_flag} alt=''/>
+                                    ქართული
+                                </NavDropdown.Item>}
+                                {flag !== 'en' && <NavDropdown.Item href="#action/3.2" onClick={() => setFlag('en')}>
+                                    <img src={uk_flag} alt={''}/>
+                                    English</NavDropdown.Item>}
+                                {flag !== 'ru' && <NavDropdown.Item href="#action/3.3" onClick={() => setFlag('ru')}>
+                                    <img src={rus_flag} alt={''}/>
+                                    Русский</NavDropdown.Item>}
+
 
                         </NavDropdown>
                         <div className={'hot-number'}>
                             <Navbar.Text id="hot">ცხელი ხაზი</Navbar.Text>
+                            <img src={call_phone} alt=''/>
                             <Navbar.Text id="number"><a href="tel:2991991">2 991 991</a></Navbar.Text>
+                            <div className={"hot-number-underline"}/>
                         </div>
                     </div>
                 </Navbar>
@@ -125,11 +145,11 @@ function Navigation() {
             {width <= 1000 ?
                 <>
 
-                    <div className={'mobile-nav'}>
+                    <div className={`mobile-nav ${path}`}>
                         <div className={'head'}>
                             <div className={'gradient'}/>
                             <div className={'logo-menu'}>
-                                <img id='footer-unisonLogo' src={footer_unisonLogo} alt=''/>
+                                <Footer_unisonLogo id='footer-unisonLogo'/>
                                 <img id='mobile-menu' src={mobile_menu} onClick={handleMenu} alt=''/>
                             </div>
                         </div>
@@ -143,19 +163,23 @@ function Navigation() {
                                     <img id='mobile-exit' src={mobile_exit} onClick={handleMenu} alt=''/>
                                 </div>
                             </div>
-                            <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
-                                <svg id="Component_8_12" data-name="Component 8 – 11" xmlns="http://www.w3.org/2000/svg"
-                                     width="62" height="62" viewBox="0 0 62 62">
-                                    <circle id="Ellipse_1" data-name="Ellipse 1" cx="31" cy="31" r="31" fill="#f2f2f2"/>
-                                    <g id="_24px-2" data-name="24px-2" transform="translate(13 13)">
-                                        <path id="Path_35" data-name="Path 35" d="M0,0H36V36H0Z" fill="none"/>
-                                        <path id="Path_36" data-name="Path 36"
-                                              d="M18,7.325A3.675,3.675,0,1,1,14.325,11,3.675,3.675,0,0,1,18,7.325m0,15.75c5.2,0,10.675,2.555,10.675,3.675v1.925H7.325V26.75c0-1.12,5.478-3.675,10.675-3.675M18,4a7,7,0,1,0,7,7A7,7,0,0,0,18,4Zm0,15.75c-4.673,0-14,2.345-14,7V32H32V26.75C32,22.1,22.673,19.75,18,19.75Z"
-                                              fill="#707070"/>
-                                    </g>
-                                </svg>
-                                <div>ჩემი<br/>კაბინეტი</div>
-                            </Nav.Link>
+                            <div className={"my-office-container"}>
+                                <Nav.Link className={'my-office'} as={Link} to="/home" style={{padding: 0, marginRight: 0}}>
+                                    <svg id="Component_8_12" data-name="Component 8 – 11" xmlns="http://www.w3.org/2000/svg"
+                                         width="62" height="62" viewBox="0 0 62 62">
+                                        <circle id="Ellipse_1" data-name="Ellipse 1" cx="31" cy="31" r="31" fill="#f2f2f2"/>
+                                        <g id="_24px-2" data-name="24px-2" transform="translate(13 13)">
+                                            <path id="Path_35" data-name="Path 35" d="M0,0H36V36H0Z" fill="none"/>
+                                            <path id="Path_36" data-name="Path 36"
+                                                  d="M18,7.325A3.675,3.675,0,1,1,14.325,11,3.675,3.675,0,0,1,18,7.325m0,15.75c5.2,0,10.675,2.555,10.675,3.675v1.925H7.325V26.75c0-1.12,5.478-3.675,10.675-3.675M18,4a7,7,0,1,0,7,7A7,7,0,0,0,18,4Zm0,15.75c-4.673,0-14,2.345-14,7V32H32V26.75C32,22.1,22.673,19.75,18,19.75Z"
+                                                  fill="#707070"/>
+                                        </g>
+                                    </svg>
+                                    <div>ჩემი<br/>კაბინეტი</div>
+                                </Nav.Link>
+                                <Nav.Link id={"sos-button"}>SOS</Nav.Link>
+
+                            </div>
                             <div className={'mobile-menu-insurance'}>
                                 <div className={'mobile-menu-insurance-card-columns'}>
                                     <div className={'mobile-card-body'}>

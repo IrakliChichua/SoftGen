@@ -1,3 +1,4 @@
+/*
 @font-face {
   font-family: PantonMtav3;
   src: url(../fonts/Panton-Regular.ttf);
@@ -20,6 +21,7 @@
   src: url(../fonts/HelveticaNeueLTGEO-MT-55Roman.ttf);
   font-weight: normal;
 }
+*/
 
 @mixin flexCenter {
   display: flex;
@@ -55,7 +57,7 @@
 
 .carousel-caption {
   p {
-    margin-bottom: 4.375rem;
+    margin-bottom: 125px;
     font-size: 24px;
   }
 
@@ -67,10 +69,16 @@
 }
 
 .carousel-indicators {
-  margin-bottom: 3.125rem;
+  margin: 0 auto 3.125rem auto;
+  max-width: 1344px;
+  justify-content: end;
+  padding: 0 15px;
+
 }
 
 .carousel-indicators [data-bs-target] {
+  margin-right: 0;
+  margin-left: 12px;
   border-radius: 50%;
   border: 2px solid white;
   width: 5px;
@@ -97,6 +105,33 @@
 .red-line {
   height: 4px;
   background-color: #EE303C;
+  display: flex;
+  justify-content: center;
+  .buy-online-arrow{
+    height: fit-content;
+    top: -100px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    #buy-online-arrow-background{
+      position: absolute;
+      top: -152px;
+      z-index: 0;
+    }
+    #buy-online-the-arrow{
+      height: 21px;
+      width: 21px;
+      z-index: 1 ;
+    }
+    div{
+      z-index: 1;
+      color: white;
+      font-size: 22px;
+      font-weight: bold;
+    }
+  }
 }
 
 .insurance-box {
@@ -594,6 +629,13 @@
   .carousel-indicators {
     margin-bottom: 2.1rem;
     margin-top: 120px;
+    max-width: 336px;
+    padding: 0 30px;
+  }
+  .carousel-indicators [data-bs-target]{
+    margin-left: 8px;
+    width: 1px;
+    height: 1px;
   }
   .carousel.slide {
     height: 266px;
@@ -621,5 +663,26 @@
     width: 109px;
     margin: 35px auto;
   }
+  .red-line{
+    .buy-online-arrow{
+      flex-direction: row;
+      align-items: center;
+      top: -55px;
+      left: -95px;
+      div{
+        font-weight: bold;
+        font-size: 15px;
+        margin-right: 7px;
+      }
+      #buy-online-the-arrow{
+        margin-bottom: 4px;
+        width: 13px;
+      }
+      #buy-online-arrow-background{
+        display: none;
+      }
+    }
+  }
+
 }
 

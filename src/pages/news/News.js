@@ -1,12 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import "../../sass/news.scss"
-import calendar_today_black_24dp from "../../assets/images/svg/calendar_today_black_24dp.svg"
-import feed_black_24dp from "../../assets/images/svg/feed_black_24dp.svg"
-import newspaper_black_24dp from "../../assets/images/svg/newspaper_black_24dp.svg"
-import search_black_24dp from "../../assets/images/svg/search_black_24dp.svg"
-import campaign_black_24dp from "../../assets/images/svg/campaign_black_24dp.svg"
+import subDays from "date-fns/subDays";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import arrow_left_circle from "../../assets/images/svg/arrow_left_circle.svg"
 import arrow_right_circle from "../../assets/images/svg/arrow_right_circle.svg"
+import X_calendar from "../../assets/images/svg/X_calendar.svg"
 import NewsNavLeftItem from "../../components/NewsNavLeftItem";
 import news_pic_1 from "../../assets/images/png/news_pic_1.png";
 import news_pic_2 from "../../assets/images/png/news_pic_2.png";
@@ -19,6 +18,14 @@ import news_pic_8 from "../../assets/images/png/news_pic_8.png";
 import news_pic_9 from "../../assets/images/png/news_pic_9.png";
 import news_pic_10 from "../../assets/images/png/news_pic_10.png";
 import NewsPageNewsCardBody from "../../components/card-items/NewsPageNewsCardBody";
+import {Button, OverlayTrigger, Tooltip} from "react-bootstrap";
+import Newspaper from "../../assets/images/Newspaper";
+import Feed from "../../assets/images/Feed";
+import Campaign from "../../assets/images/Campaign";
+import WindowDimensions from "../../utils/WindowDimensions";
+import Calendar from "../../assets/images/Calendar";
+import Search from "../../assets/images/Search";
+import {addDays} from "date-fns";
 
 let news = [
     {
@@ -82,13 +89,30 @@ let news = [
         date: "14 ოქტომბერი"
     },
 ]
+let i = 0;
 
 function News(props) {
 
     const [activeTab, setActiveTab] = useState("news")
+    const [width, height] = WindowDimensions()
+    const [activeSearch, setActiveSearch] = useState('')
+    const [activeCalendar, setActiveCalendar] = useState('')
+    const searchInput = useRef(null)
+    const [startDate, setStartDate] = useState(new Date());
+    const [datePicker, setDatePicker] = useState(false);
 
+    const activateSearch = () => {
+        setActiveSearch('active-search')
+    }
+    const activateCalendar = (i) => {
+        i%2 ? setActiveSearch('active-calendar') : setActiveSearch('')
+    }
 
-    console.log("active", activeTab)
+    const datePickerToggle = () => {
+        setDatePicker((prevState) => !prevState);
+        activateCalendar(++i);
+
+    };
 
     return (
         <div className={"news-page"} style={{display: "flex", flexDirection: "column"}}>
@@ -99,26 +123,59 @@ function News(props) {
                         <div className={"row-container"}>
                             <div className={"left"}>
                                 <NewsNavLeftItem active={activeTab === "news"} tab={"news"} activeTab={activeTab}
-                                                 setActiveTab={setActiveTab} svg={newspaper_black_24dp}
+                                                 setActiveTab={setActiveTab} svg={<Newspaper/>}
                                                  text={<>სიახლეები</>}/>
                                 <NewsNavLeftItem active={activeTab === "blog"} tab={"blog"} activeTab={activeTab}
-                                                 setActiveTab={setActiveTab} svg={feed_black_24dp} text={<>ბლოგი</>}/>
+                                                 setActiveTab={setActiveTab} svg={<Feed/>} text={<>ბლოგი</>}/>
                                 <NewsNavLeftItem active={activeTab === "campaign"} tab={"campaign"}
                                                  activeTab={activeTab} setActiveTab={setActiveTab}
-                                                 svg={campaign_black_24dp} text={<>აქცია</>}/>
+                                                 svg={<Campaign/>} text={<>აქცია</>}/>
                             </div>
-                            <div className={"right"}>
+                            <div className={`right ${activeSearch} ${activeCalendar}`}>
                                 <div className={"item"}>
-                                    <div className={"top"}>
-                                        <input type="text" placeholder="ჩაწერეთ საძიებო სიტყვა"/>
-                                        <img src={search_black_24dp} alt=''/>
+                                    <div className={`top`}
+                                         onClick={activateSearch}
+                                    >
+                                        {activeSearch === 'active-search' && width < 1000 ?
+                                            <span id={"search-calendar-text"}>ძიება</span> : <></>}
+                                        {width > 1000 || (width < 1000 && activeSearch === 'active-search') ?
+                                            <input type="text" autoFocus onBlur={() => setActiveSearch('')}
+                                                   placeholder="ჩაწერეთ საძიებო სიტყვა"/> : <></>}
+                                        <Search/>
+                                        {width <= 1000 && activeSearch !== 'active-search' ?
+                                            <span id={"search-calendar-text"}>ძიება</span> : <></>}
+
                                     </div>
                                     <div className={"active"}/>
                                 </div>
-                                <button type="button" className="btn btn-secondary" data-toggle="tooltip"
-                                        data-placement="bottom" title='პერიოდის მითითება'>
-                                    <img src={calendar_today_black_24dp} alt=''/>
-                                </button>
+                                <div className={'overlay-trigger'}>
+                                    <OverlayTrigger
+                                        // trigger={`${datePicker ? "click" : "hover"}`}
+
+                                        placement={'bottom'}
+                                        overlay={
+                                            !datePicker ? <Tooltip id={`tooltip-bottom`}>
+                                                <span>პერიოდის მითითება</span>
+                                            </Tooltip> : <></>
+                                        }
+                                    >
+                                        <div className={"calendar-box"} onClick={datePickerToggle}>
+                                            {datePicker && width>1000 ? <img id={"x-calendar"} src={X_calendar} alt=''/> :
+                                                <Calendar/>}
+                                            {width <= 1000 ?
+                                                <span id={"search-calendar-text"}>დროის პერიოდი</span> : <></>}
+                                        </div>
+
+                                    </OverlayTrigger>
+                                    {
+                                        datePicker && width > 1000 &&
+                                        <DatePicker id={"news-datepicker"} selected={startDate}
+                                                    onChange={(date) => setStartDate(date)}
+                                                    dateFormat="MM/dd/yyyy" minDate={subDays(new Date(), 10)}
+                                                     maxDate={addDays(new Date(), 0)}
+                                         />
+                                    }
+                                </div>
                             </div>
                         </div>
                         <div className={"bottom"}/>
@@ -152,4 +209,5 @@ function News(props) {
     );
 }
 
-export default News;
+export default News
+;

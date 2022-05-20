@@ -91,7 +91,7 @@ function Footer(props) {
                     {width > 1000 ?
                         <li className={'linkedin-icon'}>
                             <Nav.Link as={Link} to="/students">
-                                <img src={linkedin_icon} alt="" style={{marginRight:17}}/>
+                                <img src={linkedin_icon} alt="" style={{marginRight:18}}/>
                                 Linkedin
                             </Nav.Link>
                         </li>
